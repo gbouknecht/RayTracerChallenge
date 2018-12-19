@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA5402AF21CA832400D37BE0 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5402AE21CA832400D37BE0 /* Tuple.swift */; };
 		DAB4A33621CA79AB00907D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB4A33521CA79AB00907D68 /* AppDelegate.swift */; };
 		DAB4A33821CA79AC00907D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB4A33721CA79AC00907D68 /* Assets.xcassets */; };
 		DAB4A33B21CA79AC00907D68 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAB4A33921CA79AC00907D68 /* MainMenu.xib */; };
-		DAB4A34721CA79AC00907D68 /* RayTracerChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB4A34621CA79AC00907D68 /* RayTracerChallengeTests.swift */; };
+		DAB4A34721CA79AC00907D68 /* TupleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB4A34621CA79AC00907D68 /* TupleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA5402AE21CA832400D37BE0 /* Tuple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuple.swift; sourceTree = "<group>"; };
 		DAB4A33221CA79AB00907D68 /* RayTracerChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayTracerChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB4A33521CA79AB00907D68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB4A33721CA79AC00907D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,7 +33,7 @@
 		DAB4A33C21CA79AC00907D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAB4A33D21CA79AC00907D68 /* RayTracerChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RayTracerChallenge.entitlements; sourceTree = "<group>"; };
 		DAB4A34221CA79AC00907D68 /* RayTracerChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RayTracerChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAB4A34621CA79AC00907D68 /* RayTracerChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayTracerChallengeTests.swift; sourceTree = "<group>"; };
+		DAB4A34621CA79AC00907D68 /* TupleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleTests.swift; sourceTree = "<group>"; };
 		DAB4A34821CA79AC00907D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 				DAB4A33921CA79AC00907D68 /* MainMenu.xib */,
 				DAB4A33C21CA79AC00907D68 /* Info.plist */,
 				DAB4A33D21CA79AC00907D68 /* RayTracerChallenge.entitlements */,
+				DA5402AE21CA832400D37BE0 /* Tuple.swift */,
 			);
 			path = RayTracerChallenge;
 			sourceTree = "<group>";
@@ -86,7 +89,7 @@
 		DAB4A34521CA79AC00907D68 /* RayTracerChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				DAB4A34621CA79AC00907D68 /* RayTracerChallengeTests.swift */,
+				DAB4A34621CA79AC00907D68 /* TupleTests.swift */,
 				DAB4A34821CA79AC00907D68 /* Info.plist */,
 			);
 			path = RayTracerChallengeTests;
@@ -192,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5402AF21CA832400D37BE0 /* Tuple.swift in Sources */,
 				DAB4A33621CA79AB00907D68 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAB4A34721CA79AC00907D68 /* RayTracerChallengeTests.swift in Sources */,
+				DAB4A34721CA79AC00907D68 /* TupleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
