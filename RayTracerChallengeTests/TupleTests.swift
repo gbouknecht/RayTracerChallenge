@@ -90,4 +90,19 @@ class TupleTests: XCTestCase {
         let a = Tuple(1, -2, 3, -4)
         XCTAssertEqual(-a, Tuple(-1, 2, -3, 4))
     }
+    
+    func testTupleCanBeMultipliedByAScalar() {
+        let a = Tuple(1, -2, 3, -4)
+        XCTAssertEqual(a * 3.5, Tuple(3.5, -7, 10.5, -14))
+    }
+    
+    func testTupleCanBeMultipliedByAFraction() {
+        let a = Tuple(1, -2, 3, -4)
+        XCTAssertEqual(a * 0.5, Tuple(0.5, -1, 1.5, -2))
+    }
+    
+    func testTupleCanBeDividedByAScalar() {
+        let a = Tuple(1, -2, 3, -4)
+        XCTAssertEqual(a / 2, Tuple(0.5, -1, 1.5, -2))
+    }
 }
