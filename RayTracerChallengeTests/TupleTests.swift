@@ -113,4 +113,15 @@ class TupleTests: XCTestCase {
         XCTAssertEqual(Tuple(fromVector: 1, 2, 3).magnitude, 14.squareRoot())
         XCTAssertEqual(Tuple(fromVector: -1, -2, -3).magnitude, 14.squareRoot())
     }
+    
+    func testVectorCanBeNormalized() {
+        XCTAssertEqual(Tuple(fromVector: 4, 0, 0).normalized(), Tuple(fromVector: 1, 0, 0))
+        XCTAssertEqual(Tuple(fromVector: 1, 2, 3).normalized(), Tuple(fromVector: 0.26726, 0.53452, 0.80178))
+    }
+    
+    func testNormalizedVectorShouldHasMagnitudeOne() {
+        let v = Tuple(fromVector: 1, 2, 3)
+        let norm = v.normalized()
+        XCTAssertEqual(norm.magnitude, 1)
+    }
 }

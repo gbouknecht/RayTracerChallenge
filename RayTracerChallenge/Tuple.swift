@@ -86,4 +86,10 @@ extension Tuple {
         assert(isVector())
         return (pow(x, 2) + pow(y, 2) + pow(z, 2) + pow(w, 2)).squareRoot()
     }
+        
+    func normalized() -> Tuple {
+        assert(isVector())
+        let m = magnitude
+        return Tuple(x / m, y / m, z / m, w / m)
+    }
 }
