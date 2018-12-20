@@ -31,4 +31,28 @@ class TupleTests: XCTestCase {
         let vector = Tuple(fromVector: 4, -4, 3)
         XCTAssertEqual(vector, Tuple(4, -4, 3, 0.0))
     }
+    
+    func testTupleEqualityShouldAllowSlightDifferences() {
+        let tuple = Tuple(2.0, 3.0, 4.0, 1.0)
+        
+        XCTAssertNotEqual(tuple, Tuple(1.999990, 3.0, 4.0, 1.0))
+        XCTAssertEqual   (tuple, Tuple(1.999991, 3.0, 4.0, 1.0))
+        XCTAssertEqual   (tuple, Tuple(2.000009, 3.0, 4.0, 1.0))
+        XCTAssertNotEqual(tuple, Tuple(2.000010, 3.0, 4.0, 1.0))
+        
+        XCTAssertNotEqual(tuple, Tuple(2.0, 2.999990, 4.0, 1.0))
+        XCTAssertEqual   (tuple, Tuple(2.0, 2.999991, 4.0, 1.0))
+        XCTAssertEqual   (tuple, Tuple(2.0, 3.000009, 4.0, 1.0))
+        XCTAssertNotEqual(tuple, Tuple(2.0, 3.000010, 4.0, 1.0))
+        
+        XCTAssertNotEqual(tuple, Tuple(2.0, 3.0, 3.999990, 1.0))
+        XCTAssertEqual   (tuple, Tuple(2.0, 3.0, 3.999991, 1.0))
+        XCTAssertEqual   (tuple, Tuple(2.0, 3.0, 4.000009, 1.0))
+        XCTAssertNotEqual(tuple, Tuple(2.0, 3.0, 4.000011, 1.0))
+        
+        XCTAssertNotEqual(tuple, Tuple(2.0, 3.0, 4.0, 0.999989))
+        XCTAssertEqual   (tuple, Tuple(2.0, 3.0, 4.0, 0.999991))
+        XCTAssertEqual   (tuple, Tuple(2.0, 3.0, 4.0, 1.000009))
+        XCTAssertNotEqual(tuple, Tuple(2.0, 3.0, 4.0, 1.000010))
+    }
 }

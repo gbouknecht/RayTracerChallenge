@@ -29,4 +29,15 @@ struct Tuple: Equatable {
     func isVector() -> Bool {
         return w == Tuple.wValueForVector
     }
+    
+    static func ==(lhs: Tuple, rhs: Tuple) -> Bool {
+        return equal(lhs.x, rhs.x)
+            && equal(lhs.y, rhs.y)
+            && equal(lhs.z, rhs.z)
+            && equal(lhs.w, rhs.w)
+    }
+    
+    private static func equal(_ a: Double, _ b: Double) -> Bool {
+        return abs(a - b) < 0.00001
+    }
 }
