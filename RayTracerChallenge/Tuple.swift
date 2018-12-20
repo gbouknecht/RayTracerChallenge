@@ -1,9 +1,6 @@
 import Foundation
 
 struct Tuple {
-    private static let wValueForPoint = 1.0
-    private static let wValueForVector = 0.0
-    
     let x: Double
     let y: Double
     let z: Double
@@ -15,23 +12,9 @@ struct Tuple {
         self.z = z
         self.w = w
     }
-    
-    init(fromPoint x: Double, _ y: Double, _ z: Double) {
-        self.init(x, y, z, Tuple.wValueForPoint)
-    }
-    
-    init(fromVector x: Double, _ y: Double, _ z: Double) {
-        self.init(x, y, z, Tuple.wValueForVector)
-    }
-
-    func isPoint() -> Bool {
-        return w == Tuple.wValueForPoint
-    }
-    
-    func isVector() -> Bool {
-        return w == Tuple.wValueForVector
-    }
 }
+
+// MARK: - Equatable
 
 extension Tuple: Equatable {
     static func ==(lhs: Tuple, rhs: Tuple) -> Bool {
@@ -45,6 +28,8 @@ extension Tuple: Equatable {
         return abs(a - b) < 0.00001
     }
 }
+
+// MARK: - Operations
 
 extension Tuple {
     static func +(_ a: Tuple, _ b: Tuple) -> Tuple {
@@ -65,6 +50,34 @@ extension Tuple {
     
     static func /(_ a: Tuple, _ b: Double) -> Tuple {
         return Tuple(a.x / b, a.y / b, a.z / b, a.w / b)
+    }
+}
+
+// MARK: - Points
+
+extension Tuple {
+    private static let wValueForPoint = 1.0
+    
+    init(fromPoint x: Double, _ y: Double, _ z: Double) {
+        self.init(x, y, z, Tuple.wValueForPoint)
+    }
+
+    func isPoint() -> Bool {
+        return w == Tuple.wValueForPoint
+    }
+}
+
+// MARK: - Vectors
+
+extension Tuple {
+    private static let wValueForVector = 0.0
+    
+    init(fromVector x: Double, _ y: Double, _ z: Double) {
+        self.init(x, y, z, Tuple.wValueForVector)
+    }
+    
+    func isVector() -> Bool {
+        return w == Tuple.wValueForVector
     }
 }
 
