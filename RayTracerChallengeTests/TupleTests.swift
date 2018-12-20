@@ -55,4 +55,39 @@ class TupleTests: XCTestCase {
         XCTAssertEqual   (tuple, Tuple(2.0, 3.0, 4.0, 1.000009))
         XCTAssertNotEqual(tuple, Tuple(2.0, 3.0, 4.0, 1.000010))
     }
+    
+    func testTuplesCanBeAdded() {
+        let a1 = Tuple(3, -2, 5, 1)
+        let a2 = Tuple(-2, 3, 1, 0)
+        XCTAssertEqual(a1 + a2, Tuple(1, 1, 6, 1))
+    }
+    
+    func testPointsCanBeSubtracted() {
+        let p1 = Tuple(fromPoint: 3, 2, 1)
+        let p2 = Tuple(fromPoint: 5, 6, 7)
+        XCTAssertEqual(p1 - p2, Tuple(fromVector: -2, -4, -6))
+    }
+    
+    func testVectorCanBeSubtractedFromPoint() {
+        let p = Tuple(fromPoint: 3, 2, 1)
+        let v = Tuple(fromVector: 5, 6, 7)
+        XCTAssertEqual(p - v, Tuple(fromPoint: -2, -4, -6))
+    }
+    
+    func testVectorsCanBeSubtracted() {
+        let v1 = Tuple(fromVector: 3, 2, 1)
+        let v2 = Tuple(fromVector: 5, 6, 7)
+        XCTAssertEqual(v1 - v2, Tuple(fromVector: -2, -4, -6))
+    }
+    
+    func testVectorCanBeSubtractedFromZeroVector() {
+        let zero = Tuple(fromVector: 0, 0, 0)
+        let v = Tuple(fromVector: 1, -2, 3)
+        XCTAssertEqual(zero - v, Tuple(fromVector: -1, 2, -3))
+    }
+    
+    func testTupleCanBeNegated() {
+        let a = Tuple(1, -2, 3, -4)
+        XCTAssertEqual(-a, Tuple(-1, 2, -3, 4))
+    }
 }

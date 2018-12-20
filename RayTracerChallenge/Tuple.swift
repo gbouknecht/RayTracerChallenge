@@ -1,4 +1,4 @@
-struct Tuple: Equatable {
+struct Tuple {
     private static let wValueForPoint = 1.0
     private static let wValueForVector = 0.0
     
@@ -29,7 +29,9 @@ struct Tuple: Equatable {
     func isVector() -> Bool {
         return w == Tuple.wValueForVector
     }
-    
+}
+
+extension Tuple: Equatable {
     static func ==(lhs: Tuple, rhs: Tuple) -> Bool {
         return equal(lhs.x, rhs.x)
             && equal(lhs.y, rhs.y)
@@ -39,5 +41,19 @@ struct Tuple: Equatable {
     
     private static func equal(_ a: Double, _ b: Double) -> Bool {
         return abs(a - b) < 0.00001
+    }
+}
+
+extension Tuple {
+    static func +(_ a: Tuple, _ b: Tuple) -> Tuple {
+        return Tuple(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w)
+    }
+    
+    static func -(_ a: Tuple, _ b: Tuple) -> Tuple {
+        return Tuple(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w)
+    }
+    
+    static prefix func -(_ a: Tuple) -> Tuple {
+        return Tuple(-a.x, -a.y, -a.z, -a.w)
     }
 }
