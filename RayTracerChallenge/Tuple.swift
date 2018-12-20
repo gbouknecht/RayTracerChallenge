@@ -1,3 +1,5 @@
+import Foundation
+
 struct Tuple {
     private static let wValueForPoint = 1.0
     private static let wValueForVector = 0.0
@@ -63,5 +65,12 @@ extension Tuple {
     
     static func /(_ a: Tuple, _ b: Double) -> Tuple {
         return Tuple(a.x / b, a.y / b, a.z / b, a.w / b)
+    }
+}
+
+extension Tuple {
+    var magnitude: Double {
+        assert(isVector())
+        return (pow(x, 2) + pow(y, 2) + pow(z, 2) + pow(w, 2)).squareRoot()
     }
 }

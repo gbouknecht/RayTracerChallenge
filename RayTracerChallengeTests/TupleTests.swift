@@ -105,4 +105,12 @@ class TupleTests: XCTestCase {
         let a = Tuple(1, -2, 3, -4)
         XCTAssertEqual(a / 2, Tuple(0.5, -1, 1.5, -2))
     }
+    
+    func testVectorHasAMagnitude() {
+        XCTAssertEqual(Tuple(fromVector: 1, 0, 0).magnitude, 1)
+        XCTAssertEqual(Tuple(fromVector: 0, 1, 0).magnitude, 1)
+        XCTAssertEqual(Tuple(fromVector: 0, 0, 1).magnitude, 1)
+        XCTAssertEqual(Tuple(fromVector: 1, 2, 3).magnitude, 14.squareRoot())
+        XCTAssertEqual(Tuple(fromVector: -1, -2, -3).magnitude, 14.squareRoot())
+    }
 }
