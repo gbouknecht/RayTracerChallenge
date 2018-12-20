@@ -92,4 +92,18 @@ extension Tuple {
         let m = magnitude
         return Tuple(x / m, y / m, z / m, w / m)
     }
+    
+    func dot(_ b: Tuple) -> Double {
+        let a = self
+        assert(a.isVector() && b.isVector())
+        return a.x * b.x + a.y * b.y + a.z * b.z + a.w * b.w
+    }
+    
+    func cross(_ b: Tuple) -> Tuple {
+        let a = self
+        assert(a.isVector() && b.isVector())
+        return Tuple(fromVector: a.y * b.z - a.z * b.y,
+                                 a.z * b.x - a.x * b.z,
+                                 a.x * b.y - a.y * b.x)
+    }
 }

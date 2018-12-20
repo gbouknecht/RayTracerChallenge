@@ -124,4 +124,17 @@ class TupleTests: XCTestCase {
         let norm = v.normalized()
         XCTAssertEqual(norm.magnitude, 1)
     }
+    
+    func testVectorCanCalculateDotProduct() {
+        let a = Tuple(fromVector: 1, 2, 3)
+        let b = Tuple(fromVector: 2, 3, 4)
+        XCTAssertEqual(a.dot(b), 20)
+    }
+    
+    func testVectorCanCalculateCrossProduct() {
+        let a = Tuple(fromVector: 1, 2, 3)
+        let b = Tuple(fromVector: 2, 3, 4)
+        XCTAssertEqual(a.cross(b), Tuple(fromVector: -1, 2, -1))
+        XCTAssertEqual(b.cross(a), Tuple(fromVector: 1, -2, 1))
+    }
 }
