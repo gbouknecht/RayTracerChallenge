@@ -1,12 +1,12 @@
 import Foundation
 
-struct Tuple {
-    let x: Double
-    let y: Double
-    let z: Double
-    let w: Double
+public struct Tuple {
+    public let x: Double
+    public let y: Double
+    public let z: Double
+    public let w: Double
     
-    init(_ x: Double, _ y: Double, _ z: Double, _ w: Double) {
+    public init(_ x: Double, _ y: Double, _ z: Double, _ w: Double) {
         self.x = x
         self.y = y
         self.z = z
@@ -17,7 +17,7 @@ struct Tuple {
 // MARK: - Equatable
 
 extension Tuple: Equatable {
-    static func ==(lhs: Tuple, rhs: Tuple) -> Bool {
+    public static func ==(lhs: Tuple, rhs: Tuple) -> Bool {
         return equal(lhs.x, rhs.x)
             && equal(lhs.y, rhs.y)
             && equal(lhs.z, rhs.z)
@@ -32,23 +32,23 @@ extension Tuple: Equatable {
 // MARK: - Operations
 
 extension Tuple {
-    static func +(_ a: Tuple, _ b: Tuple) -> Tuple {
+    public static func +(_ a: Tuple, _ b: Tuple) -> Tuple {
         return Tuple(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w)
     }
     
-    static func -(_ a: Tuple, _ b: Tuple) -> Tuple {
+    public static func -(_ a: Tuple, _ b: Tuple) -> Tuple {
         return Tuple(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w)
     }
     
-    static prefix func -(_ a: Tuple) -> Tuple {
+    public static prefix func -(_ a: Tuple) -> Tuple {
         return Tuple(-a.x, -a.y, -a.z, -a.w)
     }
     
-    static func *(_ a: Tuple, _ b: Double) -> Tuple {
+    public static func *(_ a: Tuple, _ b: Double) -> Tuple {
         return Tuple(a.x * b, a.y * b, a.z * b, a.w * b)
     }
     
-    static func /(_ a: Tuple, _ b: Double) -> Tuple {
+    public static func /(_ a: Tuple, _ b: Double) -> Tuple {
         return Tuple(a.x / b, a.y / b, a.z / b, a.w / b)
     }
 }
@@ -58,11 +58,11 @@ extension Tuple {
 extension Tuple {
     private static let wValueForPoint = 1.0
     
-    init(fromPoint x: Double, _ y: Double, _ z: Double) {
+    public init(fromPoint x: Double, _ y: Double, _ z: Double) {
         self.init(x, y, z, Tuple.wValueForPoint)
     }
 
-    func isPoint() -> Bool {
+    public func isPoint() -> Bool {
         return w == Tuple.wValueForPoint
     }
 }
@@ -72,34 +72,34 @@ extension Tuple {
 extension Tuple {
     private static let wValueForVector = 0.0
     
-    init(fromVector x: Double, _ y: Double, _ z: Double) {
+    public init(fromVector x: Double, _ y: Double, _ z: Double) {
         self.init(x, y, z, Tuple.wValueForVector)
     }
     
-    func isVector() -> Bool {
+    public func isVector() -> Bool {
         return w == Tuple.wValueForVector
     }
 }
 
 extension Tuple {
-    var magnitude: Double {
+    public var magnitude: Double {
         assert(isVector())
         return (pow(x, 2) + pow(y, 2) + pow(z, 2) + pow(w, 2)).squareRoot()
     }
         
-    func normalized() -> Tuple {
+    public func normalized() -> Tuple {
         assert(isVector())
         let m = magnitude
         return Tuple(x / m, y / m, z / m, w / m)
     }
     
-    func dot(_ b: Tuple) -> Double {
+    public func dot(_ b: Tuple) -> Double {
         let a = self
         assert(a.isVector() && b.isVector())
         return a.x * b.x + a.y * b.y + a.z * b.z + a.w * b.w
     }
     
-    func cross(_ b: Tuple) -> Tuple {
+    public func cross(_ b: Tuple) -> Tuple {
         let a = self
         assert(a.isVector() && b.isVector())
         return Tuple(fromVector: a.y * b.z - a.z * b.y,
