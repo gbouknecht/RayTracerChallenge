@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA5D443121CD6D3500F238F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D443021CD6D3400F238F0 /* main.swift */; };
+		DA5D443321CD6F3800F238F0 /* RayTracerChallengeModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; };
+		DA5D443421CD6F3800F238F0 /* RayTracerChallengeModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAB4A33621CA79AB00907D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB4A33521CA79AB00907D68 /* AppDelegate.swift */; };
 		DAB4A33821CA79AC00907D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB4A33721CA79AC00907D68 /* Assets.xcassets */; };
 		DAB4A33B21CA79AC00907D68 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAB4A33921CA79AC00907D68 /* MainMenu.xib */; };
@@ -18,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DA5D443521CD6F3800F238F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAB4A32A21CA79AB00907D68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DACD705C21CD39CC00B02A85;
+			remoteInfo = RayTracerChallengeModel;
+		};
 		DACD706721CD39CC00B02A85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DAB4A32A21CA79AB00907D68 /* Project object */;
@@ -42,6 +52,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		DA5D443721CD6F3800F238F0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DA5D443421CD6F3800F238F0 /* RayTracerChallengeModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DACD707921CD39CC00B02A85 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,6 +78,10 @@
 
 /* Begin PBXFileReference section */
 		DA5402AE21CA832400D37BE0 /* Tuple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuple.swift; sourceTree = "<group>"; };
+		DA5D442221CD6AF000F238F0 /* RayTracerChallengeProjectiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayTracerChallengeProjectiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5D442B21CD6AF100F238F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA5D443021CD6D3400F238F0 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DA5D443221CD6E5D00F238F0 /* RayTracerChallengeProjectiles.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = RayTracerChallengeProjectiles.entitlements; sourceTree = "<group>"; };
 		DAB4A33221CA79AB00907D68 /* RayTracerChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayTracerChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB4A33521CA79AB00907D68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB4A33721CA79AC00907D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +96,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DA5D441F21CD6AF000F238F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5D443321CD6F3800F238F0 /* RayTracerChallengeModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAB4A32F21CA79AB00907D68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,12 +130,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA5D442321CD6AF000F238F0 /* RayTracerChallengeProjectiles */ = {
+			isa = PBXGroup;
+			children = (
+				DA5D443021CD6D3400F238F0 /* main.swift */,
+				DA5D442B21CD6AF100F238F0 /* Info.plist */,
+				DA5D443221CD6E5D00F238F0 /* RayTracerChallengeProjectiles.entitlements */,
+			);
+			path = RayTracerChallengeProjectiles;
+			sourceTree = "<group>";
+		};
 		DAB4A32921CA79AB00907D68 = {
 			isa = PBXGroup;
 			children = (
 				DAB4A33421CA79AB00907D68 /* RayTracerChallenge */,
 				DACD705E21CD39CC00B02A85 /* RayTracerChallengeModel */,
 				DACD706B21CD39CC00B02A85 /* RayTracerChallengeModelTests */,
+				DA5D442321CD6AF000F238F0 /* RayTracerChallengeProjectiles */,
 				DAB4A33321CA79AB00907D68 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +157,7 @@
 				DAB4A33221CA79AB00907D68 /* RayTracerChallenge.app */,
 				DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */,
 				DACD706521CD39CC00B02A85 /* RayTracerChallengeModelTests.xctest */,
+				DA5D442221CD6AF000F238F0 /* RayTracerChallengeProjectiles.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +205,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		DA5D442121CD6AF000F238F0 /* RayTracerChallengeProjectiles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA5D442F21CD6AF100F238F0 /* Build configuration list for PBXNativeTarget "RayTracerChallengeProjectiles" */;
+			buildPhases = (
+				DA5D441E21CD6AF000F238F0 /* Sources */,
+				DA5D441F21CD6AF000F238F0 /* Frameworks */,
+				DA5D442021CD6AF000F238F0 /* Resources */,
+				DA5D443721CD6F3800F238F0 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA5D443621CD6F3800F238F0 /* PBXTargetDependency */,
+			);
+			name = RayTracerChallengeProjectiles;
+			productName = RayTracerChallengeProjectiles;
+			productReference = DA5D442221CD6AF000F238F0 /* RayTracerChallengeProjectiles.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DAB4A33121CA79AB00907D68 /* RayTracerChallenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAB4A34B21CA79AC00907D68 /* Build configuration list for PBXNativeTarget "RayTracerChallenge" */;
@@ -226,6 +290,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Gerrit Bouknecht";
 				TargetAttributes = {
+					DA5D442121CD6AF000F238F0 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					DAB4A33121CA79AB00907D68 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -254,11 +321,19 @@
 				DAB4A33121CA79AB00907D68 /* RayTracerChallenge */,
 				DACD705C21CD39CC00B02A85 /* RayTracerChallengeModel */,
 				DACD706421CD39CC00B02A85 /* RayTracerChallengeModelTests */,
+				DA5D442121CD6AF000F238F0 /* RayTracerChallengeProjectiles */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DA5D442021CD6AF000F238F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAB4A33021CA79AB00907D68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +360,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DA5D441E21CD6AF000F238F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5D443121CD6D3500F238F0 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAB4A32E21CA79AB00907D68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +395,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DA5D443621CD6F3800F238F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DACD705C21CD39CC00B02A85 /* RayTracerChallengeModel */;
+			targetProxy = DA5D443521CD6F3800F238F0 /* PBXContainerItemProxy */;
+		};
 		DACD706821CD39CC00B02A85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DACD705C21CD39CC00B02A85 /* RayTracerChallengeModel */;
@@ -341,6 +429,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DA5D442D21CD6AF100F238F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RayTracerChallengeProjectiles/RayTracerChallengeProjectiles.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V5W866836S;
+				INFOPLIST_FILE = RayTracerChallengeProjectiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeProjectiles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		DA5D442E21CD6AF100F238F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RayTracerChallengeProjectiles/RayTracerChallengeProjectiles.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V5W866836S;
+				INFOPLIST_FILE = RayTracerChallengeProjectiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeProjectiles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		DAB4A34921CA79AC00907D68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -499,7 +631,7 @@
 		DACD707421CD39CC00B02A85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -528,7 +660,7 @@
 		DACD707521CD39CC00B02A85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -597,6 +729,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DA5D442F21CD6AF100F238F0 /* Build configuration list for PBXNativeTarget "RayTracerChallengeProjectiles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5D442D21CD6AF100F238F0 /* Debug */,
+				DA5D442E21CD6AF100F238F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DAB4A32D21CA79AB00907D68 /* Build configuration list for PBXProject "RayTracerChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
