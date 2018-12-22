@@ -10,17 +10,19 @@
 		DA5D443121CD6D3500F238F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D443021CD6D3400F238F0 /* main.swift */; };
 		DA5D443321CD6F3800F238F0 /* RayTracerChallengeModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; };
 		DA5D443421CD6F3800F238F0 /* RayTracerChallengeModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DAB4A33621CA79AB00907D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB4A33521CA79AB00907D68 /* AppDelegate.swift */; };
-		DAB4A33821CA79AC00907D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB4A33721CA79AC00907D68 /* Assets.xcassets */; };
-		DAB4A33B21CA79AC00907D68 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAB4A33921CA79AC00907D68 /* MainMenu.xib */; };
 		DACD706621CD39CC00B02A85 /* RayTracerChallengeModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; };
-		DACD707221CD39CC00B02A85 /* RayTracerChallengeModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; };
-		DACD707321CD39CC00B02A85 /* RayTracerChallengeModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DACD707B21CD39FC00B02A85 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5402AE21CA832400D37BE0 /* Tuple.swift */; };
 		DACD707C21CD3A0700B02A85 /* TupleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB4A34621CA79AC00907D68 /* TupleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DA474C3B21CE25210051DDCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAB4A32A21CA79AB00907D68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA5D442121CD6AF000F238F0;
+			remoteInfo = RayTracerChallengeProjectiles;
+		};
 		DA5D443521CD6F3800F238F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DAB4A32A21CA79AB00907D68 /* Project object */;
@@ -29,20 +31,6 @@
 			remoteInfo = RayTracerChallengeModel;
 		};
 		DACD706721CD39CC00B02A85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAB4A32A21CA79AB00907D68 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DACD705C21CD39CC00B02A85;
-			remoteInfo = RayTracerChallengeModel;
-		};
-		DACD706921CD39CC00B02A85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAB4A32A21CA79AB00907D68 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DAB4A33121CA79AB00907D68;
-			remoteInfo = RayTracerChallenge;
-		};
-		DACD707021CD39CC00B02A85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DAB4A32A21CA79AB00907D68 /* Project object */;
 			proxyType = 1;
@@ -63,17 +51,6 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DACD707921CD39CC00B02A85 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DACD707321CD39CC00B02A85 /* RayTracerChallengeModel.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -82,12 +59,6 @@
 		DA5D442B21CD6AF100F238F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA5D443021CD6D3400F238F0 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DA5D443221CD6E5D00F238F0 /* RayTracerChallengeProjectiles.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = RayTracerChallengeProjectiles.entitlements; sourceTree = "<group>"; };
-		DAB4A33221CA79AB00907D68 /* RayTracerChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayTracerChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAB4A33521CA79AB00907D68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DAB4A33721CA79AC00907D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DAB4A33A21CA79AC00907D68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		DAB4A33C21CA79AC00907D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAB4A33D21CA79AC00907D68 /* RayTracerChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RayTracerChallenge.entitlements; sourceTree = "<group>"; };
 		DAB4A34621CA79AC00907D68 /* TupleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleTests.swift; sourceTree = "<group>"; };
 		DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RayTracerChallengeModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACD706021CD39CC00B02A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,14 +72,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5D443321CD6F3800F238F0 /* RayTracerChallengeModel.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAB4A32F21CA79AB00907D68 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DACD707221CD39CC00B02A85 /* RayTracerChallengeModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +106,6 @@
 		DAB4A32921CA79AB00907D68 = {
 			isa = PBXGroup;
 			children = (
-				DAB4A33421CA79AB00907D68 /* RayTracerChallenge */,
 				DACD705E21CD39CC00B02A85 /* RayTracerChallengeModel */,
 				DACD706B21CD39CC00B02A85 /* RayTracerChallengeModelTests */,
 				DA5D442321CD6AF000F238F0 /* RayTracerChallengeProjectiles */,
@@ -154,24 +116,11 @@
 		DAB4A33321CA79AB00907D68 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DAB4A33221CA79AB00907D68 /* RayTracerChallenge.app */,
 				DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */,
 				DACD706521CD39CC00B02A85 /* RayTracerChallengeModelTests.xctest */,
 				DA5D442221CD6AF000F238F0 /* RayTracerChallengeProjectiles.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		DAB4A33421CA79AB00907D68 /* RayTracerChallenge */ = {
-			isa = PBXGroup;
-			children = (
-				DAB4A33521CA79AB00907D68 /* AppDelegate.swift */,
-				DAB4A33721CA79AC00907D68 /* Assets.xcassets */,
-				DAB4A33921CA79AC00907D68 /* MainMenu.xib */,
-				DAB4A33C21CA79AC00907D68 /* Info.plist */,
-				DAB4A33D21CA79AC00907D68 /* RayTracerChallenge.entitlements */,
-			);
-			path = RayTracerChallenge;
 			sourceTree = "<group>";
 		};
 		DACD705E21CD39CC00B02A85 /* RayTracerChallengeModel */ = {
@@ -224,25 +173,6 @@
 			productReference = DA5D442221CD6AF000F238F0 /* RayTracerChallengeProjectiles.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DAB4A33121CA79AB00907D68 /* RayTracerChallenge */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DAB4A34B21CA79AC00907D68 /* Build configuration list for PBXNativeTarget "RayTracerChallenge" */;
-			buildPhases = (
-				DAB4A32E21CA79AB00907D68 /* Sources */,
-				DAB4A32F21CA79AB00907D68 /* Frameworks */,
-				DAB4A33021CA79AB00907D68 /* Resources */,
-				DACD707921CD39CC00B02A85 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DACD707121CD39CC00B02A85 /* PBXTargetDependency */,
-			);
-			name = RayTracerChallenge;
-			productName = RayTracerChallenge;
-			productReference = DAB4A33221CA79AB00907D68 /* RayTracerChallenge.app */;
-			productType = "com.apple.product-type.application";
-		};
 		DACD705C21CD39CC00B02A85 /* RayTracerChallengeModel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DACD707821CD39CC00B02A85 /* Build configuration list for PBXNativeTarget "RayTracerChallengeModel" */;
@@ -273,7 +203,7 @@
 			);
 			dependencies = (
 				DACD706821CD39CC00B02A85 /* PBXTargetDependency */,
-				DACD706A21CD39CC00B02A85 /* PBXTargetDependency */,
+				DA474C3C21CE25210051DDCE /* PBXTargetDependency */,
 			);
 			name = RayTracerChallengeModelTests;
 			productName = RayTracerChallengeModelTests;
@@ -293,15 +223,11 @@
 					DA5D442121CD6AF000F238F0 = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					DAB4A33121CA79AB00907D68 = {
-						CreatedOnToolsVersion = 10.1;
-					};
 					DACD705C21CD39CC00B02A85 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 					DACD706421CD39CC00B02A85 = {
 						CreatedOnToolsVersion = 10.1;
-						TestTargetID = DAB4A33121CA79AB00907D68;
 					};
 				};
 			};
@@ -318,7 +244,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DAB4A33121CA79AB00907D68 /* RayTracerChallenge */,
 				DACD705C21CD39CC00B02A85 /* RayTracerChallengeModel */,
 				DACD706421CD39CC00B02A85 /* RayTracerChallengeModelTests */,
 				DA5D442121CD6AF000F238F0 /* RayTracerChallengeProjectiles */,
@@ -331,15 +256,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAB4A33021CA79AB00907D68 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAB4A33821CA79AC00907D68 /* Assets.xcassets in Resources */,
-				DAB4A33B21CA79AC00907D68 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,14 +284,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAB4A32E21CA79AB00907D68 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAB4A33621CA79AB00907D68 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DACD705921CD39CC00B02A85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,6 +303,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DA474C3C21CE25210051DDCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA5D442121CD6AF000F238F0 /* RayTracerChallengeProjectiles */;
+			targetProxy = DA474C3B21CE25210051DDCE /* PBXContainerItemProxy */;
+		};
 		DA5D443621CD6F3800F238F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DACD705C21CD39CC00B02A85 /* RayTracerChallengeModel */;
@@ -405,35 +318,13 @@
 			target = DACD705C21CD39CC00B02A85 /* RayTracerChallengeModel */;
 			targetProxy = DACD706721CD39CC00B02A85 /* PBXContainerItemProxy */;
 		};
-		DACD706A21CD39CC00B02A85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DAB4A33121CA79AB00907D68 /* RayTracerChallenge */;
-			targetProxy = DACD706921CD39CC00B02A85 /* PBXContainerItemProxy */;
-		};
-		DACD707121CD39CC00B02A85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DACD705C21CD39CC00B02A85 /* RayTracerChallengeModel */;
-			targetProxy = DACD707021CD39CC00B02A85 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		DAB4A33921CA79AC00907D68 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DAB4A33A21CA79AC00907D68 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DA5D442D21CD6AF100F238F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RayTracerChallengeProjectiles/RayTracerChallengeProjectiles.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -455,7 +346,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RayTracerChallengeProjectiles/RayTracerChallengeProjectiles.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -588,46 +478,6 @@
 			};
 			name = Release;
 		};
-		DAB4A34C21CA79AC00907D68 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = RayTracerChallenge/RayTracerChallenge.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V5W866836S;
-				INFOPLIST_FILE = RayTracerChallenge/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallenge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-			};
-			name = Debug;
-		};
-		DAB4A34D21CA79AC00907D68 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = RayTracerChallenge/RayTracerChallenge.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V5W866836S;
-				INFOPLIST_FILE = RayTracerChallenge/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallenge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-			};
-			name = Release;
-		};
 		DACD707421CD39CC00B02A85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -689,7 +539,6 @@
 		DACD707621CD39CC00B02A85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V5W866836S;
@@ -702,14 +551,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeModelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RayTracerChallenge.app/Contents/MacOS/RayTracerChallenge";
 			};
 			name = Debug;
 		};
 		DACD707721CD39CC00B02A85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V5W866836S;
@@ -722,7 +569,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeModelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RayTracerChallenge.app/Contents/MacOS/RayTracerChallenge";
 			};
 			name = Release;
 		};
@@ -743,15 +589,6 @@
 			buildConfigurations = (
 				DAB4A34921CA79AC00907D68 /* Debug */,
 				DAB4A34A21CA79AC00907D68 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DAB4A34B21CA79AC00907D68 /* Build configuration list for PBXNativeTarget "RayTracerChallenge" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DAB4A34C21CA79AC00907D68 /* Debug */,
-				DAB4A34D21CA79AC00907D68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DAB4A33121CA79AB00907D68"
-               BuildableName = "RayTracerChallenge.app"
-               BlueprintName = "RayTracerChallenge"
+               BlueprintIdentifier = "DACD705C21CD39CC00B02A85"
+               BuildableName = "RayTracerChallengeModel.framework"
+               BlueprintName = "RayTracerChallengeModel"
+               ReferencedContainer = "container:RayTracerChallenge.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DACD706421CD39CC00B02A85"
+               BuildableName = "RayTracerChallengeModelTests.xctest"
+               BlueprintName = "RayTracerChallengeModelTests"
                ReferencedContainer = "container:RayTracerChallenge.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DAB4A33121CA79AB00907D68"
-            BuildableName = "RayTracerChallenge.app"
-            BlueprintName = "RayTracerChallenge"
+            BlueprintIdentifier = "DACD705C21CD39CC00B02A85"
+            BuildableName = "RayTracerChallengeModel.framework"
+            BlueprintName = "RayTracerChallengeModel"
             ReferencedContainer = "container:RayTracerChallenge.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,16 +75,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DAB4A33121CA79AB00907D68"
-            BuildableName = "RayTracerChallenge.app"
-            BlueprintName = "RayTracerChallenge"
+            BlueprintIdentifier = "DACD705C21CD39CC00B02A85"
+            BuildableName = "RayTracerChallengeModel.framework"
+            BlueprintName = "RayTracerChallengeModel"
             ReferencedContainer = "container:RayTracerChallenge.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +93,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DAB4A33121CA79AB00907D68"
-            BuildableName = "RayTracerChallenge.app"
-            BlueprintName = "RayTracerChallenge"
+            BlueprintIdentifier = "DACD705C21CD39CC00B02A85"
+            BuildableName = "RayTracerChallengeModel.framework"
+            BlueprintName = "RayTracerChallengeModel"
             ReferencedContainer = "container:RayTracerChallenge.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
