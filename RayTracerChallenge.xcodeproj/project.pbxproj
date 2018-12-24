@@ -15,6 +15,7 @@
 		DA474C4821CE90220051DDCE /* CanvasToPPMConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA474C4721CE90220051DDCE /* CanvasToPPMConverter.swift */; };
 		DA474C4A21D126AA0051DDCE /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA474C4921D126AA0051DDCE /* Matrix.swift */; };
 		DA474C4C21D126BC0051DDCE /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA474C4B21D126BC0051DDCE /* MatrixTests.swift */; };
+		DA474C5221D161230051DDCE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA474C5121D161230051DDCE /* Common.swift */; };
 		DA5D443121CD6D3500F238F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D443021CD6D3400F238F0 /* main.swift */; };
 		DA5D443321CD6F3800F238F0 /* RayTracerChallengeModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; };
 		DA5D443421CD6F3800F238F0 /* RayTracerChallengeModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -70,6 +71,7 @@
 		DA474C4721CE90220051DDCE /* CanvasToPPMConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasToPPMConverter.swift; sourceTree = "<group>"; };
 		DA474C4921D126AA0051DDCE /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		DA474C4B21D126BC0051DDCE /* MatrixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixTests.swift; sourceTree = "<group>"; };
+		DA474C5121D161230051DDCE /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		DA5402AE21CA832400D37BE0 /* Tuple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuple.swift; sourceTree = "<group>"; };
 		DA5D442221CD6AF000F238F0 /* RayTracerChallengeProjectiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayTracerChallengeProjectiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5D442B21CD6AF100F238F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				DACD706021CD39CC00B02A85 /* Info.plist */,
+				DA474C5121D161230051DDCE /* Common.swift */,
 				DA5402AE21CA832400D37BE0 /* Tuple.swift */,
 				DA474C3F21CE74C50051DDCE /* Color.swift */,
 				DA474C4321CE84990051DDCE /* Canvas.swift */,
@@ -316,6 +319,7 @@
 				DA474C4A21D126AA0051DDCE /* Matrix.swift in Sources */,
 				DA474C4821CE90220051DDCE /* CanvasToPPMConverter.swift in Sources */,
 				DA474C4021CE74C50051DDCE /* Color.swift in Sources */,
+				DA474C5221D161230051DDCE /* Common.swift in Sources */,
 				DA474C4421CE84990051DDCE /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

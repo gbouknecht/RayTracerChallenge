@@ -22,8 +22,4 @@ extension Matrix: Equatable {
         let flattenedRhs = rhs.matrix.flatMap { $0 }
         return zip(flattenedLhs, flattenedRhs).allSatisfy({ (a, b) in equal(a, b) })
     }
-    
-    private static func equal(_ a: Double, _ b: Double) -> Bool {
-        return abs(a - b) < 0.00001
-    }
 }

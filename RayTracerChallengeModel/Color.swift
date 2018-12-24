@@ -18,10 +18,6 @@ extension Color: Equatable {
             && equal(lhs.green, rhs.green)
             && equal(lhs.blue, rhs.blue)
     }
-    
-    private static func equal(_ a: Double, _ b: Double) -> Bool {
-        return abs(a - b) < 0.00001
-    }
 }
 
 // MARK: - Operations

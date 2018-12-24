@@ -23,10 +23,6 @@ extension Tuple: Equatable {
             && equal(lhs.z, rhs.z)
             && equal(lhs.w, rhs.w)
     }
-    
-    private static func equal(_ a: Double, _ b: Double) -> Bool {
-        return abs(a - b) < 0.00001
-    }
 }
 
 // MARK: - Operations
