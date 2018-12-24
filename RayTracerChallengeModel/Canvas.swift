@@ -15,7 +15,9 @@ public struct Canvas {
             return pixels[x][y]
         }
         set {
-            pixels[x][y] = newValue
+            if x >= 0 && x < width && y >= 0 && y < height {
+                pixels[x][y] = newValue
+            }
         }
     }
 }
