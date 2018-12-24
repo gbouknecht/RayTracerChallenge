@@ -3,6 +3,9 @@ import Foundation
 public class CanvasToPPMConverter {
     private static let maxColorValue = 255
     private static let maxLineLength = 70
+    
+    public init() {
+    }
 
     public func ppm(from canvas: Canvas) -> String {
         return header(canvas) + "\n" + pixels(canvas) + "\n"

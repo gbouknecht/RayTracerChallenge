@@ -1,3 +1,4 @@
+import Foundation
 import RayTracerChallengeModel
 
 struct Projectile {
@@ -16,9 +17,36 @@ func tick(environment: Environment, projectile: Projectile) -> Projectile {
     return Projectile(position: position, velocity: velocity)
 }
 
-let p0 = Projectile(position: Tuple(fromPoint: 0, 1, 0), velocity: Tuple(fromVector: 1, 1, 0))
-let e = Environment(gravity: Tuple(fromVector: 0, -0.1, 0), wind: Tuple(fromVector: -0.01, 0, 0))
+func drawSquare(_ canvas: inout Canvas, center: (x: Int, y: Int)) {
+    let red = Color(1, 0, 0)
+    (-1...1).forEach { dx in
+        (-1...1).forEach { dy in
+            canvas[center.x + dx, center.y + dy] = red
+        }
+    }
+}
+
+let start = Tuple(fromPoint: 0, 1, 0)
+let velocity = Tuple(fromVector: 1, 1.8, 0).normalized() * 11.25
+let p0 = Projectile(position: start, velocity: velocity)
+
+let gravity = Tuple(fromVector: 0, -0.1, 0)
+let wind = Tuple(fromVector: -0.01, 0, 0)
+let e = Environment(gravity: gravity, wind: wind)
+
+var c = Canvas(900, 550)
+
 sequence(first: p0, next: { p in tick(environment: e, projectile: p) })
     .prefix(while: { p in p.position.y > 0 })
-    .enumerated()
-    .forEach { (i, p) in print(String(format: "%2d: (%6.2f, %6.2f)", i, p.position.x, p.position.y)) }
+    .forEach({ p in
+        let x = Int(p.position.x)
+        let y = c.height - Int(p.position.y)
+        drawSquare(&c, center: (x, y))
+    })
+
+if let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+    let fileURL = dirURL.appendingPathComponent("projectiles.ppm")
+    let ppm = CanvasToPPMConverter().ppm(from: c)
+    try ppm.write(to: fileURL, atomically: false, encoding: .utf8)
+    print("Written to \(fileURL)")
+}
