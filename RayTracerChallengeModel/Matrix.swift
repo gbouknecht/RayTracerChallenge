@@ -37,6 +37,12 @@ extension Matrix {
         return Matrix(matrix)
     }
     
+    public static func *(_ a: Matrix, _ b: Tuple) -> Tuple {
+        assert(a.rowCount() == 4 && a.colCount() == 4)
+        let m = a * Matrix([[b.x], [b.y], [b.z], [b.w]])
+        return Tuple(m[0, 0], m[1, 0], m[2, 0], m[3, 0])
+    }
+    
     private func rowCount() -> Int {
         return matrix.count
     }

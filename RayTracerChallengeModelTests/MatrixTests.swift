@@ -96,4 +96,14 @@ class MatrixTests: XCTestCase {
             [382],
             [614]]))
     }
+    
+    func testMatrixCanBeMultipliedByATuple() {
+        let a = Matrix([
+            [1 , 2 , 3 , 4],
+            [2 , 4 , 4 , 2],
+            [8 , 6 , 4 , 1],
+            [0 , 0 , 0 , 1]])
+        let b = Tuple(1, 2, 3, 1)
+        XCTAssertEqual(a * b, Tuple(18, 24, 33, 1))
+    }
 }
