@@ -23,3 +23,25 @@ extension Matrix: Equatable {
         return zip(flattenedLhs, flattenedRhs).allSatisfy({ (a, b) in equal(a, b) })
     }
 }
+
+// MARK: - Operations
+
+extension Matrix {
+    public static func *(_ a: Matrix, _ b: Matrix) -> Matrix {
+        assert(a.colCount() == b.rowCount())
+        let matrix = (0..<a.rowCount())
+            .map { row in (0..<b.colCount())
+                .map { col in (0..<a.colCount())
+                    .map { i in a[row, i] * b[i, col] }
+                    .reduce(0, +) } }
+        return Matrix(matrix)
+    }
+    
+    private func rowCount() -> Int {
+        return matrix.count
+    }
+    
+    private func colCount() -> Int {
+        return matrix[0].count
+    }
+}
