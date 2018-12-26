@@ -155,4 +155,26 @@ class MatrixTests: XCTestCase {
             [-3 , 2]])
         XCTAssertEqual(a.determinant(), 17)
     }
+    
+    func testSubmatrixOf3By3MatrixGives2By2Matrix() {
+        let a = Matrix([
+            [ 1 , 5 ,  0],
+            [-3 , 2 ,  7],
+            [ 0 , 6 , -3]])
+        XCTAssertEqual(a.submatrix(removedRow: 0, andColumn:2), Matrix([
+            [-3 , 2],
+            [ 0 , 6]]))
+    }
+    
+    func testSubmatrixOf4By4MatrixGives3By3Matrix() {
+        let a = Matrix([
+            [-6 , 1 ,  1 , 6],
+            [-8 , 5 ,  8 , 6],
+            [-1 , 0 ,  8 , 2],
+            [-7 , 1 , -1 , 1]])
+        XCTAssertEqual(a.submatrix(removedRow: 2, andColumn:1), Matrix([
+            [-6 ,  1 , 6],
+            [-8 ,  8 , 6],
+            [-7 , -1 , 1]]))
+    }
 }

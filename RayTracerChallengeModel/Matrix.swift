@@ -62,6 +62,17 @@ extension Matrix {
         return self[0, 0] * self[1, 1] - self[0, 1] * self[1, 0]
     }
     
+    public func submatrix(removedRow rowToBeRemoved: Int, andColumn colToBeRemoved: Int) -> Matrix {
+        assert(rowCount() == colCount())
+        assert(rowCount() > 1 && colCount() > 1)
+        let matrix = (0..<rowCount())
+            .filter { row in row != rowToBeRemoved }
+            .map { row in (0..<colCount())
+                .filter  { col in col != colToBeRemoved}
+                .map { col in self[row, col] } }
+        return Matrix(matrix)
+    }
+    
     private func rowCount() -> Int {
         return matrix.count
     }
