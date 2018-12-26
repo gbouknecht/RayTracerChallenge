@@ -57,6 +57,11 @@ extension Matrix {
         return Matrix(matrix)
     }
     
+    public func determinant() -> Double {
+        assert(rowCount() == 2 && colCount() == 2)
+        return self[0, 0] * self[1, 1] - self[0, 1] * self[1, 0]
+    }
+    
     private func rowCount() -> Int {
         return matrix.count
     }

@@ -148,4 +148,11 @@ class MatrixTests: XCTestCase {
         let a = Matrix(identityWithSize: 4)
         XCTAssertEqual(a.transposed(), a)
     }
+    
+    func testMatrixCanCalculateDeterminantFor2By2Matrix() {
+        let a = Matrix([
+            [ 1 , 5],
+            [-3 , 2]])
+        XCTAssertEqual(a.determinant(), 17)
+    }
 }
