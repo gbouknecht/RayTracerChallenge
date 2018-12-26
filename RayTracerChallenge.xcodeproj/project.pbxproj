@@ -22,6 +22,7 @@
 		DACD706621CD39CC00B02A85 /* RayTracerChallengeModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; };
 		DACD707B21CD39FC00B02A85 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5402AE21CA832400D37BE0 /* Tuple.swift */; };
 		DACD707C21CD3A0700B02A85 /* TupleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB4A34621CA79AC00907D68 /* TupleTests.swift */; };
+		DACDD82B21D3B66F00B1B2C4 /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACDD82A21D3B66F00B1B2C4 /* CommonTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		DACD706021CD39CC00B02A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DACD706521CD39CC00B02A85 /* RayTracerChallengeModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RayTracerChallengeModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACD706E21CD39CC00B02A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DACDD82A21D3B66F00B1B2C4 /* CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				DACD706E21CD39CC00B02A85 /* Info.plist */,
+				DACDD82A21D3B66F00B1B2C4 /* CommonTests.swift */,
 				DAB4A34621CA79AC00907D68 /* TupleTests.swift */,
 				DA474C3D21CE728C0051DDCE /* ColorTests.swift */,
 				DA474C4121CE83440051DDCE /* CanvasTests.swift */,
@@ -330,6 +333,7 @@
 			files = (
 				DA474C4C21D126BC0051DDCE /* MatrixTests.swift in Sources */,
 				DACD707C21CD3A0700B02A85 /* TupleTests.swift in Sources */,
+				DACDD82B21D3B66F00B1B2C4 /* CommonTests.swift in Sources */,
 				DA474C3E21CE728C0051DDCE /* ColorTests.swift in Sources */,
 				DA474C4221CE83440051DDCE /* CanvasTests.swift in Sources */,
 				DA474C4621CE8EF80051DDCE /* CanvasToPPMConverterTests.swift in Sources */,
