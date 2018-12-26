@@ -120,4 +120,32 @@ class MatrixTests: XCTestCase {
         let a = Tuple(1, 2, 3, 4)
         XCTAssertEqual(Matrix(identityWithSize: 4) * a, a)
     }
+    
+    func testMatrixCanBeTransposed() {
+        let a = Matrix([
+            [0 , 9 , 3 , 0],
+            [9 , 8 , 0 , 8],
+            [1 , 8 , 5 , 3],
+            [0 , 0 , 5 , 8]])
+        XCTAssertEqual(a.transposed(), Matrix([
+            [0 , 9 , 1 , 0],
+            [9 , 8 , 8 , 0],
+            [3 , 0 , 5 , 5],
+            [0 , 8 , 3 , 8]]))
+    }
+    
+    func testNonSquareMatrixCanBeTransposed() {
+        let a = Matrix([
+            [1 , 2],
+            [3 , 4],
+            [5 , 6]])
+        XCTAssertEqual(a.transposed(), Matrix([
+            [1 , 3 , 5],
+            [2 , 4 , 6]]))
+    }
+    
+    func testIdentityMatrixTransposedGivesSameMatrix() {
+        let a = Matrix(identityWithSize: 4)
+        XCTAssertEqual(a.transposed(), a)
+    }
 }

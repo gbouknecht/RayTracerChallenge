@@ -50,6 +50,13 @@ extension Matrix {
         return Tuple(m[0, 0], m[1, 0], m[2, 0], m[3, 0])
     }
     
+    public func transposed() -> Matrix {
+        let matrix = (0..<colCount())
+            .map { row in (0..<rowCount())
+                .map { col in self[col, row] } }
+        return Matrix(matrix)
+    }
+    
     private func rowCount() -> Int {
         return matrix.count
     }
