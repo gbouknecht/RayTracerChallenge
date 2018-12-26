@@ -97,7 +97,7 @@ class MatrixTests: XCTestCase {
             [614]]))
     }
     
-    func testMatrixCanBeMultipliedByATuple() {
+    func testMatrixCanBeMultipliedByTuple() {
         let a = Matrix([
             [1 , 2 , 3 , 4],
             [2 , 4 , 4 , 2],
@@ -105,5 +105,19 @@ class MatrixTests: XCTestCase {
             [0 , 0 , 0 , 1]])
         let b = Tuple(1, 2, 3, 1)
         XCTAssertEqual(a * b, Tuple(18, 24, 33, 1))
+    }
+    
+    func testMatrixMultipliedByIdentityMatrixGivesSameMatrix() {
+        let a = Matrix([
+            [0 , 1 ,  2 ,  4],
+            [1 , 2 ,  4 ,  8],
+            [2 , 4 ,  8 , 16],
+            [4 , 8 , 16 , 32]])
+        XCTAssertEqual(a * Matrix(identityWithSize: 4), a)
+    }
+    
+    func testIdentityMatrixMultipliedByTupleGivesSameTuple() {
+        let a = Tuple(1, 2, 3, 4)
+        XCTAssertEqual(Matrix(identityWithSize: 4) * a, a)
     }
 }

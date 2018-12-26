@@ -6,6 +6,13 @@ public struct Matrix {
         assert(matrix.allSatisfy({ $0.count == matrix[0].count }))
         self.matrix = matrix
     }
+  
+    public init(identityWithSize size: Int) {
+        assert(size > 0)
+        var matrix = Array(repeating: Array(repeating: 0.0, count: size), count: size)
+        (0..<size).forEach({ matrix[$0][$0] = 1 })
+        self.init(matrix)
+    }
     
     public subscript(row: Int, col: Int) -> Double {
         get {
