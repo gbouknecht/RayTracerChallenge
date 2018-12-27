@@ -1,6 +1,11 @@
 public struct Matrix {
     private let matrix: [[Double]]
     
+    private var rowCount: Int { return matrix.count }
+    private var rowIndices: Range<Int> { return 0..<rowCount }
+    private var columnCount: Int { return matrix[0].count }
+    private var columnIndices: Range<Int> { return 0..<columnCount }
+    
     public init(_ matrix: [[Double]]) {
         assert(matrix.count > 0)
         assert(matrix.allSatisfy({ $0.count == matrix[0].count }))
@@ -35,49 +40,39 @@ extension Matrix: Equatable {
 
 extension Matrix {
     public static func *(_ a: Matrix, _ b: Matrix) -> Matrix {
-        assert(a.colCount() == b.rowCount())
-        let matrix = (0..<a.rowCount())
-            .map { row in (0..<b.colCount())
-                .map { col in (0..<a.colCount())
+        assert(a.columnCount == b.rowCount)
+        let matrix = a.rowIndices
+            .map { row in b.columnIndices
+                .map { col in a.columnIndices
                     .map { i in a[row, i] * b[i, col] }
                     .reduce(0, +) } }
         return Matrix(matrix)
     }
     
     public static func *(_ a: Matrix, _ b: Tuple) -> Tuple {
-        assert(a.rowCount() == 4 && a.colCount() == 4)
+        assert(a.rowCount == 4 && a.columnCount == 4)
         let m = a * Matrix([[b.x], [b.y], [b.z], [b.w]])
         return Tuple(m[0, 0], m[1, 0], m[2, 0], m[3, 0])
     }
     
     public func transposed() -> Matrix {
-        let matrix = (0..<colCount())
-            .map { row in (0..<rowCount())
-                .map { col in self[col, row] } }
+        let matrix = columnIndices.map { row in rowIndices.map { col in self[col, row] } }
         return Matrix(matrix)
     }
     
     public func determinant() -> Double {
-        assert(rowCount() == 2 && colCount() == 2)
+        assert(rowCount == 2 && columnCount == 2)
         return self[0, 0] * self[1, 1] - self[0, 1] * self[1, 0]
     }
     
     public func submatrix(removedRow rowToBeRemoved: Int, andColumn colToBeRemoved: Int) -> Matrix {
-        assert(rowCount() == colCount())
-        assert(rowCount() > 1 && colCount() > 1)
-        let matrix = (0..<rowCount())
+        assert(rowCount == columnCount)
+        assert(rowCount > 1 && columnCount > 1)
+        let matrix = rowIndices
             .filter { row in row != rowToBeRemoved }
-            .map { row in (0..<colCount())
+            .map { row in columnIndices
                 .filter  { col in col != colToBeRemoved}
                 .map { col in self[row, col] } }
         return Matrix(matrix)
-    }
-    
-    private func rowCount() -> Int {
-        return matrix.count
-    }
-    
-    private func colCount() -> Int {
-        return matrix[0].count
     }
 }
