@@ -68,12 +68,17 @@ extension Matrix {
         return self[0, 0] * self[1, 1] - self[0, 1] * self[1, 0]
     }
     
-    public func submatrix(removedRow rowToBeRemoved: Int, andColumn colToBeRemoved: Int) -> Matrix {
+    public func submatrix(_ rowToBeRemoved: Int, _ colToBeRemoved: Int) -> Matrix {
         assert(rowCount == columnCount)
         assert(rowCount > 1 && columnCount > 1)
         let values = pairs(rowIndices, columnIndices)
             .filter { (row, col) in row != rowToBeRemoved && col != colToBeRemoved }
             .map { (row, col) in self[row, col] }
         return Matrix(rowCount - 1, columnCount - 1, values)
+    }
+    
+    public func minor(_ row: Int, _ column: Int) -> Double {
+        assert(rowCount == 3 && columnCount == 3)
+        return submatrix(row, column).determinant()
     }
 }
