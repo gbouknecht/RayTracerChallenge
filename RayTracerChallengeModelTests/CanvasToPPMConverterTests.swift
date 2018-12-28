@@ -24,10 +24,8 @@ class CanvasToPPMConverterTests: XCTestCase {
     
     func testShouldSplitLongLinesInPPM() {
         var c = Canvas(15, 2)
-        for x in 0..<c.width {
-            for y in 0..<c.height {
-                c[x, y] = Color(1, 0.2, 0.6)
-            }
+        pairs(0..<c.width, 0..<c.height).forEach { (x, y) in
+            c[x, y] = Color(1, 0.2, 0.6)
         }
         let ppm = CanvasToPPMConverter().ppm(from: c)
         XCTAssertEqual(ppm, """

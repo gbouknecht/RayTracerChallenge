@@ -38,10 +38,8 @@ class CanvasTests: XCTestCase {
     
     private func assertThatEveryPixelIsBlack(_ canvas: Canvas) {
         let black = Color(0, 0, 0)
-        for x in 0..<canvas.width {
-            for y in 0..<canvas.height {
-                XCTAssertEqual(canvas[x, y], black, "(\(x), \(y))")
-            }
+        pairs(0..<canvas.width, 0..<canvas.height).forEach { (x, y) in
+            XCTAssertEqual(canvas[x, y], black, "(\(x), \(y))")
         }
     }
 }
