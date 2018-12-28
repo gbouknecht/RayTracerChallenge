@@ -198,4 +198,28 @@ class MatrixTests: XCTestCase {
         XCTAssertEqual(a.minor(1, 0), 25)
         XCTAssertEqual(a.cofactor(1, 0), -25)
     }
+    
+    func testMatrixCanCalculateDeterminantFor3By3Matrix() {
+        let a = Matrix([
+            [ 1 , 2 ,  6],
+            [-5 , 8 , -4],
+            [ 2 , 6 ,  4]])
+        XCTAssertEqual(a.cofactor(0, 0), 56)
+        XCTAssertEqual(a.cofactor(0, 1), 12)
+        XCTAssertEqual(a.cofactor(0, 2), -46)
+        XCTAssertEqual(a.determinant(), -196)
+    }
+    
+    func testMatrixCanCalculateDeterminantFor4By4Matrix() {
+        let a = Matrix([
+            [-2 , -8 ,  3 ,  5],
+            [-3 ,  1 ,  7 ,  3],
+            [ 1 ,  2 , -9 ,  6],
+            [-6 ,  7 ,  7 , -9]])
+        XCTAssertEqual(a.cofactor(0, 0), 690)
+        XCTAssertEqual(a.cofactor(0, 1), 447)
+        XCTAssertEqual(a.cofactor(0, 2), 210)
+        XCTAssertEqual(a.cofactor(0, 3), 51)
+        XCTAssertEqual(a.determinant(), -4071)
+    }
 }

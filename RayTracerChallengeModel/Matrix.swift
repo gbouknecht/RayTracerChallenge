@@ -64,13 +64,16 @@ extension Matrix {
     }
     
     public func determinant() -> Double {
-        assert(rowCount == 2 && columnCount == 2)
-        return self[0, 0] * self[1, 1] - self[0, 1] * self[1, 0]
+        assert(rowCount > 1 && rowCount == columnCount)
+        if rowCount == 2 {
+            return self[0, 0] * self[1, 1] - self[0, 1] * self[1, 0]
+        } else {
+            return columnIndices.map { col in self[0, col] * cofactor(0, col) }.reduce(0, +)
+        }
     }
     
     public func submatrix(_ rowToBeRemoved: Int, _ colToBeRemoved: Int) -> Matrix {
-        assert(rowCount == columnCount)
-        assert(rowCount > 1 && columnCount > 1)
+        assert(rowCount > 1 && rowCount == columnCount)
         let values = pairs(rowIndices, columnIndices)
             .filter { (row, col) in row != rowToBeRemoved && col != colToBeRemoved }
             .map { (row, col) in self[row, col] }
@@ -78,12 +81,12 @@ extension Matrix {
     }
     
     public func minor(_ row: Int, _ column: Int) -> Double {
-        assert(rowCount == 3 && columnCount == 3)
+        assert(rowCount > 1 && rowCount == columnCount)
         return submatrix(row, column).determinant()
     }
     
     public func cofactor(_ row: Int, _ column: Int) -> Double {
-        assert(rowCount == 3 && columnCount == 3)
+        assert(rowCount > 1 && rowCount == columnCount)
         return (row + column) % 2 == 0 ? minor(row, column) : -minor(row, column)
     }
 }
