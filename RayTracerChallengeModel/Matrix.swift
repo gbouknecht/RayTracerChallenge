@@ -81,4 +81,9 @@ extension Matrix {
         assert(rowCount == 3 && columnCount == 3)
         return submatrix(row, column).determinant()
     }
+    
+    public func cofactor(_ row: Int, _ column: Int) -> Double {
+        assert(rowCount == 3 && columnCount == 3)
+        return (row + column) % 2 == 0 ? minor(row, column) : -minor(row, column)
+    }
 }

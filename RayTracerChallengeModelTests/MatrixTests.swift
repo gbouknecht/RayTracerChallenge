@@ -187,4 +187,15 @@ class MatrixTests: XCTestCase {
         XCTAssertEqual(b.determinant(), 25)
         XCTAssertEqual(a.minor(1, 0), 25)
     }
+    
+    func testMatrixCanCalculateCofactorFor3By3Matrix() {
+        let a = Matrix([
+            [3 ,  5 ,  0],
+            [2 , -1 , -7],
+            [6 , -1 ,  5]])
+        XCTAssertEqual(a.minor(0, 0), -12)
+        XCTAssertEqual(a.cofactor(0, 0), -12)
+        XCTAssertEqual(a.minor(1, 0), 25)
+        XCTAssertEqual(a.cofactor(1, 0), -25)
+    }
 }
