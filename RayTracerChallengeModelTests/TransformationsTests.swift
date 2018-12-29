@@ -45,4 +45,38 @@ class TransformationsTests: XCTestCase {
         let p = point(2, 3, 4)
         XCTAssertEqual(transform * p, point(-2, 3, 4))
     }
+    
+    func testRotationCanRotatePointAroundxAxis() {
+        let p = point(0, 1, 0)
+        let halfQuarter = rotationx(.pi / 4)
+        let fullQuarter = rotationx(.pi / 2)
+        XCTAssertEqual(halfQuarter * p, point(0, 2.0.squareRoot() / 2, 2.0.squareRoot() / 2))
+        XCTAssertEqual(halfQuarter * halfQuarter * p, point(0, 0, 1))
+        XCTAssertEqual(fullQuarter * p, point(0, 0, 1))
+    }
+    
+    func testInvertedRotationAroundxAxisRotatesInOppositeDirection() {
+        let p = point(0, 1, 0)
+        let halfQuarter = rotationx(.pi / 4)
+        let inv = halfQuarter.inverted()
+        XCTAssertEqual(inv * p, point(0, 2.0.squareRoot() / 2, -2.0.squareRoot() / 2))
+    }
+    
+    func testRotationCanRotatePointAroundyAxis() {
+        let p = point(0, 0, 1)
+        let halfQuarter = rotationy(.pi / 4)
+        let fullQuarter = rotationy(.pi / 2)
+        XCTAssertEqual(halfQuarter * p, point(2.0.squareRoot() / 2, 0, 2.0.squareRoot() / 2))
+        XCTAssertEqual(halfQuarter * halfQuarter * p, point(1, 0, 0))
+        XCTAssertEqual(fullQuarter * p, point(1, 0, 0))
+    }
+    
+    func testRotationCanRotatePointAroundzAxis() {
+        let p = point(0, 1, 0)
+        let halfQuarter = rotationz(.pi / 4)
+        let fullQuarter = rotationz(.pi / 2)
+        XCTAssertEqual(halfQuarter * p, point(-2.0.squareRoot() / 2, 2.0.squareRoot() / 2, 0))
+        XCTAssertEqual(halfQuarter * halfQuarter * p, point(-1, 0, 0))
+        XCTAssertEqual(fullQuarter * p, point(-1, 0, 0))
+    }
 }
