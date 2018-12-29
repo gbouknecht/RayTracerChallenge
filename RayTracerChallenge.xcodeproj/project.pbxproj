@@ -19,6 +19,8 @@
 		DA5D443121CD6D3500F238F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D443021CD6D3400F238F0 /* main.swift */; };
 		DA5D443321CD6F3800F238F0 /* RayTracerChallengeModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; };
 		DA5D443421CD6F3800F238F0 /* RayTracerChallengeModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DA7D72E521D7C16800A65884 /* Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D72E421D7C16800A65884 /* Transformations.swift */; };
+		DA7D72E721D7C17700A65884 /* TransformationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D72E621D7C17700A65884 /* TransformationsTests.swift */; };
 		DACD706621CD39CC00B02A85 /* RayTracerChallengeModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; };
 		DACD707B21CD39FC00B02A85 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5402AE21CA832400D37BE0 /* Tuple.swift */; };
 		DACD707C21CD3A0700B02A85 /* TupleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB4A34621CA79AC00907D68 /* TupleTests.swift */; };
@@ -78,6 +80,8 @@
 		DA5D442B21CD6AF100F238F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA5D443021CD6D3400F238F0 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DA5D443221CD6E5D00F238F0 /* RayTracerChallengeProjectiles.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = RayTracerChallengeProjectiles.entitlements; sourceTree = "<group>"; };
+		DA7D72E421D7C16800A65884 /* Transformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformations.swift; sourceTree = "<group>"; };
+		DA7D72E621D7C17700A65884 /* TransformationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsTests.swift; sourceTree = "<group>"; };
 		DAB4A34621CA79AC00907D68 /* TupleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleTests.swift; sourceTree = "<group>"; };
 		DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RayTracerChallengeModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACD706021CD39CC00B02A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				DA474C4321CE84990051DDCE /* Canvas.swift */,
 				DA474C4721CE90220051DDCE /* CanvasToPPMConverter.swift */,
 				DA474C4921D126AA0051DDCE /* Matrix.swift */,
+				DA7D72E421D7C16800A65884 /* Transformations.swift */,
 			);
 			path = RayTracerChallengeModel;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				DA474C4121CE83440051DDCE /* CanvasTests.swift */,
 				DA474C4521CE8EF80051DDCE /* CanvasToPPMConverterTests.swift */,
 				DA474C4B21D126BC0051DDCE /* MatrixTests.swift */,
+				DA7D72E621D7C17700A65884 /* TransformationsTests.swift */,
 			);
 			path = RayTracerChallengeModelTests;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 				DA474C4821CE90220051DDCE /* CanvasToPPMConverter.swift in Sources */,
 				DA474C4021CE74C50051DDCE /* Color.swift in Sources */,
 				DA474C5221D161230051DDCE /* Common.swift in Sources */,
+				DA7D72E521D7C16800A65884 /* Transformations.swift in Sources */,
 				DA474C4421CE84990051DDCE /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +342,7 @@
 				DACD707C21CD3A0700B02A85 /* TupleTests.swift in Sources */,
 				DACDD82B21D3B66F00B1B2C4 /* CommonTests.swift in Sources */,
 				DA474C3E21CE728C0051DDCE /* ColorTests.swift in Sources */,
+				DA7D72E721D7C17700A65884 /* TransformationsTests.swift in Sources */,
 				DA474C4221CE83440051DDCE /* CanvasTests.swift in Sources */,
 				DA474C4621CE8EF80051DDCE /* CanvasToPPMConverterTests.swift in Sources */,
 			);
