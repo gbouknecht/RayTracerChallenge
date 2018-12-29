@@ -89,4 +89,16 @@ extension Matrix {
         assert(rowCount > 1 && rowCount == columnCount)
         return (row + column) % 2 == 0 ? minor(row, column) : -minor(row, column)
     }
+    
+    public func isInvertible() -> Bool {
+        return determinant() != 0
+    }
+    
+    public func inverted() -> Matrix {
+        assert(rowCount > 1 && rowCount == columnCount)
+        assert(isInvertible())
+        let det = determinant()
+        let values = pairs(columnIndices, rowIndices).map { (row, col) in cofactor(col, row) / det }
+        return Matrix(columnCount, rowCount, values)
+    }
 }
