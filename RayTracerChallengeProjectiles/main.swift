@@ -24,12 +24,12 @@ func drawSquare(_ canvas: inout Canvas, center: (x: Int, y: Int)) {
     }
 }
 
-let start = Tuple(fromPoint: 0, 1, 0)
-let velocity = Tuple(fromVector: 1, 1.8, 0).normalized() * 11.25
+let start = point(0, 1, 0)
+let velocity = vector(1, 1.8, 0).normalized() * 11.25
 let p0 = Projectile(position: start, velocity: velocity)
 
-let gravity = Tuple(fromVector: 0, -0.1, 0)
-let wind = Tuple(fromVector: -0.01, 0, 0)
+let gravity = vector(0, -0.1, 0)
+let wind = vector(-0.01, 0, 0)
 let e = Environment(gravity: gravity, wind: wind)
 
 var c = Canvas(900, 550)

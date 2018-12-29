@@ -63,6 +63,10 @@ extension Tuple {
     }
 }
 
+public func point(_ x: Double, _ y: Double, _ z: Double) -> Tuple {
+    return Tuple(fromPoint: x, y, z)
+}
+
 // MARK: - Vectors
 
 extension Tuple {
@@ -75,6 +79,10 @@ extension Tuple {
     public func isVector() -> Bool {
         return w == Tuple.wValueForVector
     }
+}
+
+public func vector(_ x: Double, _ y: Double, _ z: Double) -> Tuple {
+    return Tuple(fromVector: x, y, z)
 }
 
 extension Tuple {
@@ -98,8 +106,8 @@ extension Tuple {
     public func cross(_ b: Tuple) -> Tuple {
         let a = self
         assert(a.isVector() && b.isVector())
-        return Tuple(fromVector: a.y * b.z - a.z * b.y,
-                                 a.z * b.x - a.x * b.z,
-                                 a.x * b.y - a.y * b.x)
+        return vector(a.y * b.z - a.z * b.y,
+                      a.z * b.x - a.x * b.z,
+                      a.x * b.y - a.y * b.x)
     }
 }
