@@ -46,5 +46,5 @@ if let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomai
     let fileURL = dirURL.appendingPathComponent("projectiles.ppm")
     let ppm = CanvasToPPMConverter().ppm(from: c)
     try ppm.write(to: fileURL, atomically: false, encoding: .utf8)
-    print("Written to \(fileURL)")
+    print("\(fileURL)")
 }
