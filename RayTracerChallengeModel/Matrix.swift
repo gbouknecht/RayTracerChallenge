@@ -45,16 +45,16 @@ extension Matrix: Equatable {
 // MARK: - Operations
 
 extension Matrix {
-    public static func *(_ a: Matrix, _ b: Matrix) -> Matrix {
-        assert(a.columnCount == b.rowCount)
-        let value = { (row, col) in a.columnIndices.map { i in a[row, i] * b[i, col] }.reduce(0, +) }
-        let values = pairs(a.rowIndices, b.columnIndices).map(value)
-        return Matrix(a.rowCount, b.columnCount, values)
+    public static func *(_ A: Matrix, _ B: Matrix) -> Matrix {
+        assert(A.columnCount == B.rowCount)
+        let value = { (row, col) in A.columnIndices.map { i in A[row, i] * B[i, col] }.reduce(0, +) }
+        let values = pairs(A.rowIndices, B.columnIndices).map(value)
+        return Matrix(A.rowCount, B.columnCount, values)
     }
     
-    public static func *(_ a: Matrix, _ b: Tuple) -> Tuple {
-        assert(a.rowCount == 4 && a.columnCount == 4)
-        let m = a * Matrix(4, 1, [b.x, b.y, b.z, b.w])
+    public static func *(_ A: Matrix, _ B: Tuple) -> Tuple {
+        assert(A.rowCount == 4 && A.columnCount == 4)
+        let m = A * Matrix(4, 1, [B.x, B.y, B.z, B.w])
         return Tuple(m[0, 0], m[1, 0], m[2, 0], m[3, 0])
     }
     

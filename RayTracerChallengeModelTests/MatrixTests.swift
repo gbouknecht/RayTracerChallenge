@@ -3,78 +3,78 @@ import XCTest
 
 class MatrixTests: XCTestCase {
     func testMatrixCanCreate4By4Matrix() {
-        let m = Matrix([
+        let M = Matrix([
             [ 1   ,    2 ,    3 ,    4],
             [ 5.5 ,  6.5 ,  7.5 ,  8.5],
             [ 9   ,   10 ,   11 ,   12],
             [13.5 , 14.5 , 15.5 , 16.5]])
-        XCTAssertEqual(m[0, 0], 1)
-        XCTAssertEqual(m[0, 3], 4)
-        XCTAssertEqual(m[1, 0], 5.5)
-        XCTAssertEqual(m[1, 2], 7.5)
-        XCTAssertEqual(m[2, 2], 11)
-        XCTAssertEqual(m[3, 0], 13.5)
-        XCTAssertEqual(m[3, 2], 15.5)
+        XCTAssertEqual(M[0, 0], 1)
+        XCTAssertEqual(M[0, 3], 4)
+        XCTAssertEqual(M[1, 0], 5.5)
+        XCTAssertEqual(M[1, 2], 7.5)
+        XCTAssertEqual(M[2, 2], 11)
+        XCTAssertEqual(M[3, 0], 13.5)
+        XCTAssertEqual(M[3, 2], 15.5)
     }
     
     func testMatrixCanCreate2By2Matrix() {
-        let m = Matrix([
+        let M = Matrix([
             [-3 ,  5],
             [ 1 , -2]])
-        XCTAssertEqual(m[0, 0], -3)
-        XCTAssertEqual(m[0, 1], 5)
-        XCTAssertEqual(m[1, 0], 1)
-        XCTAssertEqual(m[1, 1], -2)
+        XCTAssertEqual(M[0, 0], -3)
+        XCTAssertEqual(M[0, 1], 5)
+        XCTAssertEqual(M[1, 0], 1)
+        XCTAssertEqual(M[1, 1], -2)
     }
     
     func testMatrixCanCreate3By3Matrix() {
-        let m = Matrix([
+        let M = Matrix([
             [-3 ,  5 ,  0],
             [ 1 , -2 , -7],
             [ 0 ,  1 ,  1]])
-        XCTAssertEqual(m[0, 0], -3)
-        XCTAssertEqual(m[1, 1], -2)
-        XCTAssertEqual(m[2, 2], 1)
+        XCTAssertEqual(M[0, 0], -3)
+        XCTAssertEqual(M[1, 1], -2)
+        XCTAssertEqual(M[2, 2], 1)
     }
     
     func testMatrixEqualityShouldAllowSlightDifferences() {
-        let a = Matrix([
+        let A = Matrix([
             [1 , 2 , 3 , 4],
             [5 , 6 , 7 , 8],
             [9 , 8 , 7 , 6],
             [5 , 4 , 3 , 2]])
-        let b0 = Matrix([
+        let B0 = Matrix([
             [0.999991 , 2.000009 , 3        , 4],
             [5        , 6        , 7        , 8],
             [9        , 8        , 6.999991 , 6],
             [5        , 4.000009 , 3        , 2]])
-        let b1 = Matrix([
+        let B1 = Matrix([
             [1 , 2 , 3        , 4],
             [5 , 6 , 7        , 8],
             [9 , 8 , 6.999989 , 6],
             [5 , 4 , 3        , 2]])
-        let b2 = Matrix([
+        let B2 = Matrix([
             [1 , 2 , 3        , 4],
             [5 , 6 , 7        , 8],
             [9 , 8 , 7.000011 , 6],
             [5 , 4 , 3        , 2]])
-        XCTAssertEqual(a, b0)
-        XCTAssertNotEqual(a, b1)
-        XCTAssertNotEqual(a, b2)
+        XCTAssertEqual(A, B0)
+        XCTAssertNotEqual(A, B1)
+        XCTAssertNotEqual(A, B2)
     }
     
     func testMatricesCanBeMultiplied() {
-        let a = Matrix([
+        let A = Matrix([
             [1 , 2 , 3 , 4],
             [5 , 6 , 7 , 8],
             [9 , 8 , 7 , 6],
             [5 , 4 , 3 , 2]])
-        let b = Matrix([
+        let B = Matrix([
             [-2 , 1 , 2 ,  3],
             [ 3 , 2 , 1 , -1],
             [ 4 , 3 , 6 ,  5],
             [ 1 , 2 , 7 ,  8]])
-        XCTAssertEqual(a * b, Matrix([
+        XCTAssertEqual(A * B, Matrix([
             [20 , 22 ,  50 ,  48],
             [44 , 54 , 114 , 108],
             [40 , 58 , 110 , 102],
@@ -82,52 +82,52 @@ class MatrixTests: XCTestCase {
     }
     
     func testMatricesWithDifferentDimensionsCanBeMultiplied() {
-        let a = Matrix([
+        let A = Matrix([
             [1 ,  2 ,  3 ,  4],
             [5 ,  6 ,  7 ,  8],
             [9 , 10 , 11 , 12]])
-        let b = Matrix([
+        let B = Matrix([
             [13],
             [14],
             [15],
             [16]])
-        XCTAssertEqual(a * b, Matrix([
+        XCTAssertEqual(A * B, Matrix([
             [150],
             [382],
             [614]]))
     }
     
     func testMatrixCanBeMultipliedByTuple() {
-        let a = Matrix([
+        let A = Matrix([
             [1 , 2 , 3 , 4],
             [2 , 4 , 4 , 2],
             [8 , 6 , 4 , 1],
             [0 , 0 , 0 , 1]])
-        let b = Tuple(1, 2, 3, 1)
-        XCTAssertEqual(a * b, Tuple(18, 24, 33, 1))
+        let B = Tuple(1, 2, 3, 1)
+        XCTAssertEqual(A * B, Tuple(18, 24, 33, 1))
     }
     
     func testMatrixMultipliedByIdentityMatrixGivesSameMatrix() {
-        let a = Matrix([
+        let A = Matrix([
             [0 , 1 ,  2 ,  4],
             [1 , 2 ,  4 ,  8],
             [2 , 4 ,  8 , 16],
             [4 , 8 , 16 , 32]])
-        XCTAssertEqual(a * Matrix(identityWithSize: 4), a)
+        XCTAssertEqual(A * Matrix(identityWithSize: 4), A)
     }
     
     func testIdentityMatrixMultipliedByTupleGivesSameTuple() {
-        let a = Tuple(1, 2, 3, 4)
-        XCTAssertEqual(Matrix(identityWithSize: 4) * a, a)
+        let A = Tuple(1, 2, 3, 4)
+        XCTAssertEqual(Matrix(identityWithSize: 4) * A, A)
     }
     
     func testMatrixCanBeTransposed() {
-        let a = Matrix([
+        let A = Matrix([
             [0 , 9 , 3 , 0],
             [9 , 8 , 0 , 8],
             [1 , 8 , 5 , 3],
             [0 , 0 , 5 , 8]])
-        XCTAssertEqual(a.transposed(), Matrix([
+        XCTAssertEqual(A.transposed(), Matrix([
             [0 , 9 , 1 , 0],
             [9 , 8 , 8 , 0],
             [3 , 0 , 5 , 5],
@@ -135,124 +135,124 @@ class MatrixTests: XCTestCase {
     }
     
     func testNonSquareMatrixCanBeTransposed() {
-        let a = Matrix([
+        let A = Matrix([
             [1 , 2],
             [3 , 4],
             [5 , 6]])
-        XCTAssertEqual(a.transposed(), Matrix([
+        XCTAssertEqual(A.transposed(), Matrix([
             [1 , 3 , 5],
             [2 , 4 , 6]]))
     }
     
     func testIdentityMatrixTransposedGivesSameMatrix() {
-        let a = Matrix(identityWithSize: 4)
-        XCTAssertEqual(a.transposed(), a)
+        let A = Matrix(identityWithSize: 4)
+        XCTAssertEqual(A.transposed(), A)
     }
     
     func testMatrixCanCalculateDeterminantFor2By2Matrix() {
-        let a = Matrix([
+        let A = Matrix([
             [ 1 , 5],
             [-3 , 2]])
-        XCTAssertEqual(a.determinant(), 17)
+        XCTAssertEqual(A.determinant(), 17)
     }
     
     func testSubmatrixOf3By3MatrixGives2By2Matrix() {
-        let a = Matrix([
+        let A = Matrix([
             [ 1 , 5 ,  0],
             [-3 , 2 ,  7],
             [ 0 , 6 , -3]])
-        XCTAssertEqual(a.submatrix(0, 2), Matrix([
+        XCTAssertEqual(A.submatrix(0, 2), Matrix([
             [-3 , 2],
             [ 0 , 6]]))
     }
     
     func testSubmatrixOf4By4MatrixGives3By3Matrix() {
-        let a = Matrix([
+        let A = Matrix([
             [-6 , 1 ,  1 , 6],
             [-8 , 5 ,  8 , 6],
             [-1 , 0 ,  8 , 2],
             [-7 , 1 , -1 , 1]])
-        XCTAssertEqual(a.submatrix(2, 1), Matrix([
+        XCTAssertEqual(A.submatrix(2, 1), Matrix([
             [-6 ,  1 , 6],
             [-8 ,  8 , 6],
             [-7 , -1 , 1]]))
     }
     
     func testMatrixCanCalculateMinorFor3By3Matrix() {
-        let a = Matrix([
+        let A = Matrix([
             [3 ,  5 ,  0],
             [2 , -1 , -7],
             [6 , -1 ,  5]])
-        let b = a.submatrix(1, 0)
-        XCTAssertEqual(b.determinant(), 25)
-        XCTAssertEqual(a.minor(1, 0), 25)
+        let B = A.submatrix(1, 0)
+        XCTAssertEqual(B.determinant(), 25)
+        XCTAssertEqual(A.minor(1, 0), 25)
     }
     
     func testMatrixCanCalculateCofactorFor3By3Matrix() {
-        let a = Matrix([
+        let A = Matrix([
             [3 ,  5 ,  0],
             [2 , -1 , -7],
             [6 , -1 ,  5]])
-        XCTAssertEqual(a.minor(0, 0), -12)
-        XCTAssertEqual(a.cofactor(0, 0), -12)
-        XCTAssertEqual(a.minor(1, 0), 25)
-        XCTAssertEqual(a.cofactor(1, 0), -25)
+        XCTAssertEqual(A.minor(0, 0), -12)
+        XCTAssertEqual(A.cofactor(0, 0), -12)
+        XCTAssertEqual(A.minor(1, 0), 25)
+        XCTAssertEqual(A.cofactor(1, 0), -25)
     }
     
     func testMatrixCanCalculateDeterminantFor3By3Matrix() {
-        let a = Matrix([
+        let A = Matrix([
             [ 1 , 2 ,  6],
             [-5 , 8 , -4],
             [ 2 , 6 ,  4]])
-        XCTAssertEqual(a.cofactor(0, 0), 56)
-        XCTAssertEqual(a.cofactor(0, 1), 12)
-        XCTAssertEqual(a.cofactor(0, 2), -46)
-        XCTAssertEqual(a.determinant(), -196)
+        XCTAssertEqual(A.cofactor(0, 0), 56)
+        XCTAssertEqual(A.cofactor(0, 1), 12)
+        XCTAssertEqual(A.cofactor(0, 2), -46)
+        XCTAssertEqual(A.determinant(), -196)
     }
     
     func testMatrixCanCalculateDeterminantFor4By4Matrix() {
-        let a = Matrix([
+        let A = Matrix([
             [-2 , -8 ,  3 ,  5],
             [-3 ,  1 ,  7 ,  3],
             [ 1 ,  2 , -9 ,  6],
             [-6 ,  7 ,  7 , -9]])
-        XCTAssertEqual(a.cofactor(0, 0), 690)
-        XCTAssertEqual(a.cofactor(0, 1), 447)
-        XCTAssertEqual(a.cofactor(0, 2), 210)
-        XCTAssertEqual(a.cofactor(0, 3), 51)
-        XCTAssertEqual(a.determinant(), -4071)
+        XCTAssertEqual(A.cofactor(0, 0), 690)
+        XCTAssertEqual(A.cofactor(0, 1), 447)
+        XCTAssertEqual(A.cofactor(0, 2), 210)
+        XCTAssertEqual(A.cofactor(0, 3), 51)
+        XCTAssertEqual(A.determinant(), -4071)
     }
     
     func testMatrixCanTellIfItIsInvertible() {
-        let a = Matrix([
+        let A = Matrix([
             [6 ,  4 , 4 ,  4],
             [5 ,  5 , 7 ,  6],
             [4 , -9 , 3 , -7],
             [9 ,  1 , 7 , -6]])
-        let b = Matrix([
+        let B = Matrix([
             [-4 ,  2 , -2 , -3],
             [ 9 ,  6 ,  2 ,  6],
             [ 0 , -5 ,  1 , -5],
             [ 0 ,  0 ,  0 ,  0]])
-        XCTAssertEqual(a.determinant(), -2120)
-        XCTAssertTrue(a.isInvertible())
-        XCTAssertEqual(b.determinant(), 0)
-        XCTAssertFalse(b.isInvertible())
+        XCTAssertEqual(A.determinant(), -2120)
+        XCTAssertTrue(A.isInvertible())
+        XCTAssertEqual(B.determinant(), 0)
+        XCTAssertFalse(B.isInvertible())
     }
     
     func testMatrixCanCalculateInverse() {
-        let a = Matrix([
+        let A = Matrix([
             [-5 ,  2 ,  6 , -8],
             [ 1 , -5 ,  1 ,  8],
             [ 7 ,  7 , -6 , -7],
             [ 1 , -3 ,  7 ,  4]])
-        let b = a.inverted()
-        XCTAssertEqual(a.determinant(), 532)
-        XCTAssertEqual(a.cofactor(2, 3), -160)
-        XCTAssertEqual(b[3 , 2], -160 / 532)
-        XCTAssertEqual(a.cofactor(3, 2), 105)
-        XCTAssertEqual(b[2, 3], 105 / 532)
-        XCTAssertEqual(b, Matrix([
+        let B = A.inverted()
+        XCTAssertEqual(A.determinant(), 532)
+        XCTAssertEqual(A.cofactor(2, 3), -160)
+        XCTAssertEqual(B[3 , 2], -160 / 532)
+        XCTAssertEqual(A.cofactor(3, 2), 105)
+        XCTAssertEqual(B[2, 3], 105 / 532)
+        XCTAssertEqual(B, Matrix([
             [ 0.21805 ,  0.45113 ,  0.24060 , -0.04511],
             [-0.80827 , -1.45677 , -0.44361 ,  0.52068],
             [-0.07895 , -0.22368 , -0.05263 ,  0.19737],
@@ -284,17 +284,17 @@ class MatrixTests: XCTestCase {
     }
     
     func testMatrixProductMultipliedByInverseGivesOriginalMatrixAgain() {
-        let a = Matrix([
+        let A = Matrix([
             [ 3 , -9 ,  7 ,  3],
             [ 3 , -8 ,  2 , -9],
             [-4 ,  4 ,  4 ,  1],
             [-6 ,  5 , -1 ,  1]])
-        let b = Matrix([
+        let B = Matrix([
             [ 8 ,  2 ,  2 ,  2],
             [ 3 , -1 ,  7 ,  0],
             [ 7 ,  0 ,  5 ,  4],
             [ 6 , -2 ,  0 ,  5]])
-        let c = a * b
-        XCTAssertEqual(c * b.inverted(), a)
+        let C = A * B
+        XCTAssertEqual(C * B.inverted(), A)
     }
 }
