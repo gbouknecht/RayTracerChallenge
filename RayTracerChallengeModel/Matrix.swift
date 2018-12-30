@@ -52,9 +52,9 @@ extension Matrix {
         return Matrix(A.rowCount, B.columnCount, values)
     }
     
-    public static func *(_ A: Matrix, _ B: Tuple) -> Tuple {
+    public static func *(_ A: Matrix, _ b: Tuple) -> Tuple {
         assert(A.rowCount == 4 && A.columnCount == 4)
-        let m = A * Matrix(4, 1, [B.x, B.y, B.z, B.w])
+        let m = A * Matrix(4, 1, [b.x, b.y, b.z, b.w])
         return Tuple(m[0, 0], m[1, 0], m[2, 0], m[3, 0])
     }
     
