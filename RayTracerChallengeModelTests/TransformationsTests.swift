@@ -79,4 +79,14 @@ class TransformationsTests: XCTestCase {
         XCTAssertEqual(halfQuarter * halfQuarter * p, point(-1, 0, 0))
         XCTAssertEqual(fullQuarter * p, point(-1, 0, 0))
     }
+    
+    func testShearingMovesOneComponentOfPointInProportionToOtherComponents() {
+        let p = point(2, 3, 4)
+        XCTAssertEqual(shearing(xy: 1, xz: 0, yx: 0, yz: 0, zx: 0, zy: 0) * p, point(5, 3, 4))
+        XCTAssertEqual(shearing(xy: 0, xz: 1, yx: 0, yz: 0, zx: 0, zy: 0) * p, point(6, 3, 4))
+        XCTAssertEqual(shearing(xy: 0, xz: 0, yx: 1, yz: 0, zx: 0, zy: 0) * p, point(2, 5, 4))
+        XCTAssertEqual(shearing(xy: 0, xz: 0, yx: 0, yz: 1, zx: 0, zy: 0) * p, point(2, 7, 4))
+        XCTAssertEqual(shearing(xy: 0, xz: 0, yx: 0, yz: 0, zx: 1, zy: 0) * p, point(2, 3, 6))
+        XCTAssertEqual(shearing(xy: 0, xz: 0, yx: 0, yz: 0, zx: 0, zy: 1) * p, point(2, 3, 7))
+    }
 }
