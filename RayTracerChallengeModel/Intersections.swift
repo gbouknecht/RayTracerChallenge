@@ -14,4 +14,11 @@ public struct Intersections {
     public subscript(index: Int) -> Intersection {
         return intersections[index]
     }
+    
+    public func hit() -> Intersection? {
+        return intersections
+            .filter { $0.t >= 0 }
+            .sorted { $0.t < $1.t }
+            .first
+    }
 }
