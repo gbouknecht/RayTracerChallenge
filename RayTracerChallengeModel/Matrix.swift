@@ -28,9 +28,7 @@ public struct Matrix {
     }
 
     public subscript(row: Int, col: Int) -> Double {
-        get {
-            return values[row * columnCount + col]
-        }
+        return values[row * columnCount + col]
     }
 }
 

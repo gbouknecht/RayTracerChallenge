@@ -23,6 +23,10 @@
 		DA58EDE721D94A010041C10A /* RayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58EDE621D94A010041C10A /* RayTests.swift */; };
 		DA58EDE921D94EBA0041C10A /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58EDE821D94EBA0041C10A /* Sphere.swift */; };
 		DA58EDEB21D94F960041C10A /* SphereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58EDEA21D94F960041C10A /* SphereTests.swift */; };
+		DA58EDED21DB68FB0041C10A /* Intersection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58EDEC21DB68FB0041C10A /* Intersection.swift */; };
+		DA58EDEF21DB69090041C10A /* IntersectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58EDEE21DB69090041C10A /* IntersectionTests.swift */; };
+		DA58EDF121DB6EB20041C10A /* Intersections.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58EDF021DB6EB20041C10A /* Intersections.swift */; };
+		DA58EDF321DB6EC20041C10A /* IntersectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58EDF221DB6EC20041C10A /* IntersectionsTests.swift */; };
 		DA5D443121CD6D3500F238F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D443021CD6D3400F238F0 /* main.swift */; };
 		DA5D443321CD6F3800F238F0 /* RayTracerChallengeModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; };
 		DA5D443421CD6F3800F238F0 /* RayTracerChallengeModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DACD705D21CD39CC00B02A85 /* RayTracerChallengeModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -109,6 +113,10 @@
 		DA58EDE621D94A010041C10A /* RayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayTests.swift; sourceTree = "<group>"; };
 		DA58EDE821D94EBA0041C10A /* Sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
 		DA58EDEA21D94F960041C10A /* SphereTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphereTests.swift; sourceTree = "<group>"; };
+		DA58EDEC21DB68FB0041C10A /* Intersection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intersection.swift; sourceTree = "<group>"; };
+		DA58EDEE21DB69090041C10A /* IntersectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectionTests.swift; sourceTree = "<group>"; };
+		DA58EDF021DB6EB20041C10A /* Intersections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intersections.swift; sourceTree = "<group>"; };
+		DA58EDF221DB6EC20041C10A /* IntersectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectionsTests.swift; sourceTree = "<group>"; };
 		DA5D442221CD6AF000F238F0 /* RayTracerChallengeProjectiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayTracerChallengeProjectiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5D442B21CD6AF100F238F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA5D443021CD6D3400F238F0 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -213,6 +221,8 @@
 				DA7D72E421D7C16800A65884 /* MatrixTransformations.swift */,
 				DA58EDE421D949EE0041C10A /* Ray.swift */,
 				DA58EDE821D94EBA0041C10A /* Sphere.swift */,
+				DA58EDEC21DB68FB0041C10A /* Intersection.swift */,
+				DA58EDF021DB6EB20041C10A /* Intersections.swift */,
 			);
 			path = RayTracerChallengeModel;
 			sourceTree = "<group>";
@@ -230,6 +240,8 @@
 				DA7D72E621D7C17700A65884 /* MatrixTransformationsTests.swift */,
 				DA58EDE621D94A010041C10A /* RayTests.swift */,
 				DA58EDEA21D94F960041C10A /* SphereTests.swift */,
+				DA58EDEE21DB69090041C10A /* IntersectionTests.swift */,
+				DA58EDF221DB6EC20041C10A /* IntersectionsTests.swift */,
 			);
 			path = RayTracerChallengeModelTests;
 			sourceTree = "<group>";
@@ -423,10 +435,12 @@
 				DACD707B21CD39FC00B02A85 /* Tuple.swift in Sources */,
 				DA58EDE921D94EBA0041C10A /* Sphere.swift in Sources */,
 				DA474C4A21D126AA0051DDCE /* Matrix.swift in Sources */,
+				DA58EDF121DB6EB20041C10A /* Intersections.swift in Sources */,
 				DA474C4821CE90220051DDCE /* CanvasToPPMConverter.swift in Sources */,
 				DA474C4021CE74C50051DDCE /* Color.swift in Sources */,
 				DA474C5221D161230051DDCE /* Common.swift in Sources */,
 				DA7D72E521D7C16800A65884 /* MatrixTransformations.swift in Sources */,
+				DA58EDED21DB68FB0041C10A /* Intersection.swift in Sources */,
 				DA474C4421CE84990051DDCE /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,8 +455,10 @@
 				DACDD82B21D3B66F00B1B2C4 /* CommonTests.swift in Sources */,
 				DA58EDEB21D94F960041C10A /* SphereTests.swift in Sources */,
 				DA474C3E21CE728C0051DDCE /* ColorTests.swift in Sources */,
+				DA58EDEF21DB69090041C10A /* IntersectionTests.swift in Sources */,
 				DA7D72E721D7C17700A65884 /* MatrixTransformationsTests.swift in Sources */,
 				DA474C4221CE83440051DDCE /* CanvasTests.swift in Sources */,
+				DA58EDF321DB6EC20041C10A /* IntersectionsTests.swift in Sources */,
 				DA474C4621CE8EF80051DDCE /* CanvasToPPMConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
