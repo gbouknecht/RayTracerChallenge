@@ -11,4 +11,8 @@ public struct Ray {
     public func position(_ t: Double) -> Tuple {
         return origin + direction * t
     }
+    
+    public func transformed(_ matrix: Matrix) -> Ray {
+        return Ray(matrix * origin, matrix * direction)
+    }
 }
