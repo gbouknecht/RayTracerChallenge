@@ -110,4 +110,9 @@ extension Tuple {
                       a.z * b.x - a.x * b.z,
                       a.x * b.y - a.y * b.x)
     }
+    
+    public func reflected(_ normal: Tuple) -> Tuple {
+        assert(isVector() && normal.isVector())
+        return self - normal * 2 * dot(normal)
+    }
 }

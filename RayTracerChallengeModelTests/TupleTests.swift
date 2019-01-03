@@ -145,4 +145,18 @@ class TupleTests: XCTestCase {
         XCTAssertEqual(a.cross(b), vector(-1, 2, -1))
         XCTAssertEqual(b.cross(a), vector(1, -2, 1))
     }
+    
+    func testVectorCanCalculateReflectionWhenApproachingAt45Degrees() {
+        let v = vector(1, -1, 0)
+        let n = vector(0, 1, 0)
+        let r = v.reflected(n)
+        XCTAssertEqual(r, vector(1, 1, 0))
+    }
+    
+    func testVectorCanCalculateReflectionWhenHittingSlantedSurface() {
+        let v = vector(0, -1, 0)
+        let n = vector(2.0.squareRoot() / 2, 2.0.squareRoot() / 2, 0)
+        let r = v.reflected(n)
+        XCTAssertEqual(r, vector(1, 0, 0))
+    }
 }
