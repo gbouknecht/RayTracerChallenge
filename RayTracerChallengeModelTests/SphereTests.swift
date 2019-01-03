@@ -80,4 +80,48 @@ class SphereTests: XCTestCase {
         let xs = s.intersect(r)
         XCTAssertEqual(xs.count, 0)
     }
+    
+    func testSphereCanCalculateNormalAtPointOnxAxis() {
+        let s = Sphere()
+        let n = s.normalAt(point(1, 0, 0))
+        XCTAssertEqual(n, vector(1, 0, 0))
+    }
+    
+    func testSphereCanCalculateNormalAtPointOnyAxis() {
+        let s = Sphere()
+        let n = s.normalAt(point(0, 1, 0))
+        XCTAssertEqual(n, vector(0, 1, 0))
+    }
+    
+    func testSphereCanCalculateNormalAtPointOnzAxis() {
+        let s = Sphere()
+        let n = s.normalAt(point(0, 0, 1))
+        XCTAssertEqual(n, vector(0, 0, 1))
+    }
+    
+    func testSphereCanCalculateNormalAtNonAxialPoint() {
+        let s = Sphere()
+        let xyz = 3.0.squareRoot() / 3
+        let n = s.normalAt(point(xyz, xyz, xyz))
+        XCTAssertEqual(n, vector(xyz, xyz, xyz))
+    }
+    
+    func testSphereCalculatedNormalIsNormalized() {
+        let s = Sphere()
+        let xyz = 3.0.squareRoot() / 3
+        let n = s.normalAt(point(xyz, xyz, xyz))
+        XCTAssertEqual(n, n.normalized())
+    }
+    
+    func testSphereCanCalculateNormalWhenTranslated() {
+        let s = Sphere(transform: identity().translated(0, 1, 0))
+        let n = s.normalAt(point(0, 1.70711, -0.70711))
+        XCTAssertEqual(n, vector(0, 0.70711, -0.70711))
+    }
+    
+    func testSphereCanCalculateNormalWhenTransformed() {
+        let s = Sphere(transform: identity().rotatedAroundz(.pi / 5).scaled(1, 0.5, 1))
+        let n = s.normalAt(point(0, 2.0.squareRoot() / 2, -2.0.squareRoot() / 2))
+        XCTAssertEqual(n, vector(0, 0.97014, -0.24254))
+    }
 }

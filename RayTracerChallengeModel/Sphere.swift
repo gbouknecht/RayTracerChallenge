@@ -29,4 +29,12 @@ public struct Sphere: Equatable {
             return Intersections(intersections)
         }
     }
+    
+    public func normalAt(_ worldPoint: Tuple) -> Tuple {
+        assert(worldPoint.isPoint())
+        let objectPoint = transform.inverted() * worldPoint
+        let objectNormal = objectPoint - point(0, 0, 0)    // For now, the sphere is centered at the world origin.
+        let worldNormal = transform.inverted().transposed() * objectNormal
+        return vector(worldNormal.x, worldNormal.y, worldNormal.z).normalized()
+    }
 }
