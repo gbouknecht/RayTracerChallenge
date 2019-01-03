@@ -4,13 +4,11 @@ public struct Sphere: Equatable {
     private let id = UUID()
     
     public let transform: Matrix
-    
-    public init() {
-        transform = identity()
-    }
-    
-    public init(transform: Matrix) {
+    public let material: Material
+
+    public init(transform: Matrix = identity(), material: Material = Material()) {
         self.transform = transform
+        self.material = material
     }
     
     public func intersect(_ ray: Ray) -> Intersections {

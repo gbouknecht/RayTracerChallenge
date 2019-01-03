@@ -124,4 +124,16 @@ class SphereTests: XCTestCase {
         let n = s.normalAt(point(0, 2.0.squareRoot() / 2, -2.0.squareRoot() / 2))
         XCTAssertEqual(n, vector(0, 0.97014, -0.24254))
     }
+    
+    func testSphereHasDefaultMaterial() {
+        let s = Sphere()
+        let m = s.material
+        XCTAssertEqual(m, Material())
+    }
+    
+    func testSphereMaterialCanBeChanged() {
+        let m = Material(ambient: 1)
+        let s = Sphere(material: m)
+        XCTAssertEqual(s.material, m)
+    }
 }
