@@ -10,6 +10,14 @@ public struct Color {
     }
 }
 
+// MARK: - Colors
+
+extension Color {
+    public static let black = Color(0, 0, 0)
+    public static let red = Color(1, 0, 0)
+    public static let white = Color(1, 1, 1)
+}
+
 // MARK: - Equatable
 
 extension Color: Equatable {

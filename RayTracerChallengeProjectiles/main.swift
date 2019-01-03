@@ -18,9 +18,8 @@ func tick(environment: Environment, projectile: Projectile) -> Projectile {
 }
 
 func drawSquare(_ canvas: inout Canvas, center: (x: Int, y: Int)) {
-    let red = Color(1, 0, 0)
     pairs(-1...1, -1...1).forEach { (dx, dy) in
-        canvas[center.x + dx, center.y + dy] = red
+        canvas[center.x + dx, center.y + dy] = .red
     }
 }
 

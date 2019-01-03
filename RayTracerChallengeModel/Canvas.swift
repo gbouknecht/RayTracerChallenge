@@ -7,7 +7,7 @@ public struct Canvas {
     public init(_ width: Int, _ height: Int) {
         self.width = width
         self.height = height
-        self.pixels = Array(repeating: Array(repeating: Color(0, 0, 0), count: height), count: width)
+        self.pixels = Array(repeating: Array(repeating: .black, count: height), count: width)
     }
     
     public subscript(x: Int, y: Int) -> Color {

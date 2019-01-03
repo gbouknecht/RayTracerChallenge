@@ -2,10 +2,9 @@ import Foundation
 import RayTracerChallengeModel
 
 func drawSquare(_ canvas: inout Canvas, center: (x: Int, y: Int)) {
-    let white = Color(1, 1, 1)
     let size = 2
     pairs(-size...size, -size...size).forEach { (dx, dy) in
-        canvas[center.x + dx, center.y + dy] = white
+        canvas[center.x + dx, center.y + dy] = .white
     }
 }
 

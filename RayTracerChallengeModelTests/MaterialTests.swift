@@ -4,7 +4,7 @@ import XCTest
 class MaterialTests: XCTestCase {
     func testMaterialHasDefaultValues() {
         let m = Material()
-        XCTAssertEqual(m.color, Color(1, 1, 1))
+        XCTAssertEqual(m.color, .white)
         XCTAssertEqual(m.ambient, 0.1)
         XCTAssertEqual(m.diffuse, 0.9)
         XCTAssertEqual(m.specular, 0.9)
