@@ -1,8 +1,6 @@
 import Foundation
 
 public struct Sphere: Equatable {
-    private let id = UUID()
-    
     public let transform: Matrix
     public let material: Material
 

@@ -1,4 +1,4 @@
-public struct PointLight {
+public struct PointLight: Equatable {
     let position: Tuple
     let intensity: Color
     
