@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Sphere: Equatable {
+public struct Sphere: Object, Equatable {
     public let transform: Matrix
     public let material: Material
 

@@ -1,5 +1,5 @@
 public struct Intersections {
-    private let intersections: [Intersection]
+    public let intersections: [Intersection]
     
     public var count: Int { return intersections.count }
     

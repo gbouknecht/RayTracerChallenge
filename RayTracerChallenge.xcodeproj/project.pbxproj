@@ -19,6 +19,7 @@
 		DA36604E21DFB185009CD1F5 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA36604D21DFB185009CD1F5 /* World.swift */; };
 		DA36605021DFB193009CD1F5 /* WorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA36604F21DFB193009CD1F5 /* WorldTests.swift */; };
 		DA36605221DFB485009CD1F5 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA36605121DFB485009CD1F5 /* TestUtils.swift */; };
+		DA36605421DFD254009CD1F5 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA36605321DFD254009CD1F5 /* Object.swift */; };
 		DA474C3E21CE728C0051DDCE /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA474C3D21CE728C0051DDCE /* ColorTests.swift */; };
 		DA474C4021CE74C50051DDCE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA474C3F21CE74C50051DDCE /* Color.swift */; };
 		DA474C4221CE83440051DDCE /* CanvasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA474C4121CE83440051DDCE /* CanvasTests.swift */; };
@@ -159,6 +160,7 @@
 		DA36604D21DFB185009CD1F5 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		DA36604F21DFB193009CD1F5 /* WorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTests.swift; sourceTree = "<group>"; };
 		DA36605121DFB485009CD1F5 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		DA36605321DFD254009CD1F5 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		DA474C3D21CE728C0051DDCE /* ColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
 		DA474C3F21CE74C50051DDCE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DA474C4121CE83440051DDCE /* CanvasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasTests.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				DA474C4921D126AA0051DDCE /* Matrix.swift */,
 				DA7D72E421D7C16800A65884 /* MatrixTransformations.swift */,
 				DA58EDE421D949EE0041C10A /* Ray.swift */,
+				DA36605321DFD254009CD1F5 /* Object.swift */,
 				DA58EDE821D94EBA0041C10A /* Sphere.swift */,
 				DA58EDEC21DB68FB0041C10A /* Intersection.swift */,
 				DA58EDF021DB6EB20041C10A /* Intersections.swift */,
@@ -638,6 +641,7 @@
 				DA7D72E521D7C16800A65884 /* MatrixTransformations.swift in Sources */,
 				DA36602921DE373A009CD1F5 /* PointLight.swift in Sources */,
 				DA58EDED21DB68FB0041C10A /* Intersection.swift in Sources */,
+				DA36605421DFD254009CD1F5 /* Object.swift in Sources */,
 				DA474C4421CE84990051DDCE /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
