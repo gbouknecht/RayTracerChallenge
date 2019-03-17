@@ -1,5 +1,5 @@
 public struct World {
-    public let light: PointLight?
+    public var light: PointLight?
     public let objects: [Object]
     
     public init(light: PointLight? = nil, objects: [Object] = [Object]()) {
@@ -13,5 +13,14 @@ public struct World {
             .flatMap { $0.intersections }
             .sorted { $0.t < $1.t }
         return Intersections(intersections)
+    }
+
+    public func shadeHit(_ comps: PreparedComputations) -> Color {
+        assert(light != nil)
+        return lighting(material: comps.object.material,
+                        light: light!,
+                        point: comps.point,
+                        eyev: comps.eyev,
+                        normalv: comps.normalv)
     }
 }

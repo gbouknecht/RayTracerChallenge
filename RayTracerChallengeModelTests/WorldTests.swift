@@ -31,4 +31,25 @@ class WorldTests: XCTestCase {
         XCTAssertEqual(xs[2].t, 5.5)
         XCTAssertEqual(xs[3].t, 6)
     }
+
+    func testWorldCanShadeAnIntersection() {
+        let w = defaultWorld()
+        let r = Ray(point(0, 0, -5), vector(0, 0, 1))
+        let shape = w.objects[0]
+        let i = Intersection(4, shape)
+        let comps = PreparedComputations(intersection: i, ray: r)
+        let c = w.shadeHit(comps)
+        XCTAssertEqual(c, Color(0.38066, 0.47583, 0.2855))
+    }
+
+    func testWorldCanShadeAnIntersectionFromTheInside() {
+        var w = defaultWorld()
+        w.light = PointLight(point(0, 0.25, 0), Color(1, 1, 1))
+        let r = Ray(point(0, 0, 0), vector(0, 0, 1))
+        let shape = w.objects[1]
+        let i = Intersection(0.5, shape)
+        let comps = PreparedComputations(intersection: i, ray: r)
+        let c = w.shadeHit(comps)
+        XCTAssertEqual(c, Color(0.90498, 0.90498, 0.90498))
+    }
 }
