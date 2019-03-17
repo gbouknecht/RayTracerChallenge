@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E994C84851B7496E1F97466 /* PreparedComputations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E994BCA0953A83AF155C486 /* PreparedComputations.swift */; };
+		6E994EB958EC603B3A9EEA80 /* PreparedComputationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E994467EAE3130106AD66E4 /* PreparedComputationsTests.swift */; };
 		DA36602921DE373A009CD1F5 /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA36602821DE373A009CD1F5 /* PointLight.swift */; };
 		DA36602B21DE374B009CD1F5 /* PointLightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA36602A21DE374B009CD1F5 /* PointLightTests.swift */; };
 		DA36602D21DE3947009CD1F5 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA36602C21DE3947009CD1F5 /* Material.swift */; };
@@ -147,6 +149,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E994467EAE3130106AD66E4 /* PreparedComputationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreparedComputationsTests.swift; sourceTree = "<group>"; };
+		6E994BCA0953A83AF155C486 /* PreparedComputations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreparedComputations.swift; sourceTree = "<group>"; };
 		DA36602821DE373A009CD1F5 /* PointLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointLight.swift; sourceTree = "<group>"; };
 		DA36602A21DE374B009CD1F5 /* PointLightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointLightTests.swift; sourceTree = "<group>"; };
 		DA36602C21DE3947009CD1F5 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 				DA36602C21DE3947009CD1F5 /* Material.swift */,
 				DA36603021DE4628009CD1F5 /* Lighting.swift */,
 				DA36604D21DFB185009CD1F5 /* World.swift */,
+				6E994BCA0953A83AF155C486 /* PreparedComputations.swift */,
 			);
 			path = RayTracerChallengeModel;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				DA36603221DE4638009CD1F5 /* LightingTests.swift */,
 				DA36604F21DFB193009CD1F5 /* WorldTests.swift */,
 				DA36605121DFB485009CD1F5 /* TestUtils.swift */,
+				6E994467EAE3130106AD66E4 /* PreparedComputationsTests.swift */,
 			);
 			path = RayTracerChallengeModelTests;
 			sourceTree = "<group>";
@@ -643,6 +649,7 @@
 				DA58EDED21DB68FB0041C10A /* Intersection.swift in Sources */,
 				DA36605421DFD254009CD1F5 /* Object.swift in Sources */,
 				DA474C4421CE84990051DDCE /* Canvas.swift in Sources */,
+				6E994C84851B7496E1F97466 /* PreparedComputations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +673,7 @@
 				DA36605021DFB193009CD1F5 /* WorldTests.swift in Sources */,
 				DA474C4621CE8EF80051DDCE /* CanvasToPPMConverterTests.swift in Sources */,
 				DA36603321DE4638009CD1F5 /* LightingTests.swift in Sources */,
+				6E994EB958EC603B3A9EEA80 /* PreparedComputationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
