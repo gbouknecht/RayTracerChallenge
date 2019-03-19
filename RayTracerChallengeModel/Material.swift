@@ -1,9 +1,9 @@
 public struct Material: Equatable {
-    public let color: Color
-    public let ambient: Double
-    public let diffuse: Double
-    public let specular: Double
-    public let shininess: Double
+    public var color: Color
+    public var ambient: Double
+    public var diffuse: Double
+    public var specular: Double
+    public var shininess: Double
     
     public init(color: Color = .white,
                 ambient: Double = 0.1,

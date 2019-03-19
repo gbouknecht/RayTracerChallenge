@@ -1,6 +1,6 @@
 public struct World {
     public var light: PointLight?
-    public let objects: [Object]
+    public var objects: [Object]
     
     public init(light: PointLight? = nil, objects: [Object] = [Object]()) {
         self.light = light
@@ -22,5 +22,13 @@ public struct World {
                         point: comps.point,
                         eyev: comps.eyev,
                         normalv: comps.normalv)
+    }
+
+    public func colorAt(_ ray: Ray) -> Color {
+        if let hit = intersect(ray).hit() {
+            return shadeHit(PreparedComputations(intersection: hit, ray: ray))
+        } else {
+            return .black
+        }
     }
 }

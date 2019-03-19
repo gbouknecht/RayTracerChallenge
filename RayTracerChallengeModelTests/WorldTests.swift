@@ -52,4 +52,27 @@ class WorldTests: XCTestCase {
         let c = w.shadeHit(comps)
         XCTAssertEqual(c, Color(0.90498, 0.90498, 0.90498))
     }
+
+    func testWorldCanDetermineColorWhenRayMisses() {
+        let w = defaultWorld()
+        let r = Ray(point(0, 0, -5), vector(0, 1, 0))
+        let c = w.colorAt(r)
+        XCTAssertEqual(c, .black)
+    }
+
+    func testWorldCanDetermineColorWhenRayHits() {
+        let w = defaultWorld()
+        let r = Ray(point(0, 0, -5), vector(0, 0, 1))
+        let c = w.colorAt(r)
+        XCTAssertEqual(c, Color(0.38066, 0.47583, 0.2855))
+    }
+
+    func testWorldCanDetermineColorAtIntersectionBehindRay() {
+        var w = defaultWorld()
+        w.objects[0].material.ambient = 1
+        w.objects[1].material.ambient = 1
+        let r = Ray(point(0, 0, 0.75), vector(0, 0, -1))
+        let c = w.colorAt(r)
+        XCTAssertEqual(c, w.objects[1].material.color)
+    }
 }

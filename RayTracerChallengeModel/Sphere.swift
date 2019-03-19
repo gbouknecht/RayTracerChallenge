@@ -2,7 +2,7 @@ import Foundation
 
 public struct Sphere: Object, Equatable {
     public let transform: Matrix
-    public let material: Material
+    public var material: Material
 
     public init(transform: Matrix = identity(), material: Material = Material()) {
         self.transform = transform
