@@ -1,7 +1,7 @@
 import XCTest
 @testable import RayTracerChallengeModel
 
-class TransformationsTests: XCTestCase {
+class MatrixTransformationsTests: XCTestCase {
     func testTranslationMovesPoint() {
         let transform = identity().translated(5, -3, 2)
         let p = point(-3, 4, 5)
