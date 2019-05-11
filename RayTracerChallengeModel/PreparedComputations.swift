@@ -11,15 +11,15 @@ public struct PreparedComputations {
         object = intersection.object
         point = ray.position(t)
         eyev = -ray.direction
-        (normalv, inside) = PreparedComputations.normalvAndInside(object, point, eyev)
+        (normalv, inside) = normalvAndInside(object, point, eyev)
     }
+}
 
-    private static func normalvAndInside(_ object: Object, _ point: Tuple, _ eyev: Tuple) -> (Tuple, Bool) {
-        let normalv = object.normalAt(point)
-        if normalv.dot(eyev) < 0 {
-            return (-normalv, true)
-        } else {
-            return (normalv, false)
-        }
+fileprivate func normalvAndInside(_ object: Object, _ point: Tuple, _ eyev: Tuple) -> (Tuple, Bool) {
+    let normalv = object.normalAt(point)
+    if normalv.dot(eyev) < 0 {
+        return (-normalv, true)
+    } else {
+        return (normalv, false)
     }
 }

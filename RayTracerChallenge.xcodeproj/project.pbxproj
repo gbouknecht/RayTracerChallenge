@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E99435B7C601C7DFE84F487 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9947BFF3F318149D9B006C /* Camera.swift */; };
 		6E994C84851B7496E1F97466 /* PreparedComputations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E994BCA0953A83AF155C486 /* PreparedComputations.swift */; };
 		6E994EB958EC603B3A9EEA80 /* PreparedComputationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E994467EAE3130106AD66E4 /* PreparedComputationsTests.swift */; };
+		6E994F65EA348FB70012252D /* CameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E994E4AC4CF4E1408DCF6B6 /* CameraTests.swift */; };
 		6E994FC3E388EC1B3095B41A /* Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9949D56461952830E53E9E /* Transformations.swift */; };
 		6E994FE809E08E6520C8FC55 /* TransformationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99434DBE0851888BF4D9CA /* TransformationsTests.swift */; };
 		DA36602921DE373A009CD1F5 /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA36602821DE373A009CD1F5 /* PointLight.swift */; };
@@ -153,8 +155,10 @@
 /* Begin PBXFileReference section */
 		6E99434DBE0851888BF4D9CA /* TransformationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformationsTests.swift; sourceTree = "<group>"; };
 		6E994467EAE3130106AD66E4 /* PreparedComputationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreparedComputationsTests.swift; sourceTree = "<group>"; };
+		6E9947BFF3F318149D9B006C /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		6E9949D56461952830E53E9E /* Transformations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformations.swift; sourceTree = "<group>"; };
 		6E994BCA0953A83AF155C486 /* PreparedComputations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreparedComputations.swift; sourceTree = "<group>"; };
+		6E994E4AC4CF4E1408DCF6B6 /* CameraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraTests.swift; sourceTree = "<group>"; };
 		DA36602821DE373A009CD1F5 /* PointLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointLight.swift; sourceTree = "<group>"; };
 		DA36602A21DE374B009CD1F5 /* PointLightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointLightTests.swift; sourceTree = "<group>"; };
 		DA36602C21DE3947009CD1F5 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 				DA36604D21DFB185009CD1F5 /* World.swift */,
 				6E994BCA0953A83AF155C486 /* PreparedComputations.swift */,
 				6E9949D56461952830E53E9E /* Transformations.swift */,
+				6E9947BFF3F318149D9B006C /* Camera.swift */,
 			);
 			path = RayTracerChallengeModel;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				DA36605121DFB485009CD1F5 /* TestUtils.swift */,
 				6E994467EAE3130106AD66E4 /* PreparedComputationsTests.swift */,
 				6E99434DBE0851888BF4D9CA /* TransformationsTests.swift */,
+				6E994E4AC4CF4E1408DCF6B6 /* CameraTests.swift */,
 			);
 			path = RayTracerChallengeModelTests;
 			sourceTree = "<group>";
@@ -657,6 +663,7 @@
 				DA474C4421CE84990051DDCE /* Canvas.swift in Sources */,
 				6E994C84851B7496E1F97466 /* PreparedComputations.swift in Sources */,
 				6E994FC3E388EC1B3095B41A /* Transformations.swift in Sources */,
+				6E99435B7C601C7DFE84F487 /* Camera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +689,7 @@
 				DA36603321DE4638009CD1F5 /* LightingTests.swift in Sources */,
 				6E994EB958EC603B3A9EEA80 /* PreparedComputationsTests.swift in Sources */,
 				6E994FE809E08E6520C8FC55 /* TransformationsTests.swift in Sources */,
+				6E994F65EA348FB70012252D /* CameraTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
