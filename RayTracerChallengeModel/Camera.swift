@@ -13,7 +13,7 @@ public struct Camera {
         self.hsize = hsize
         self.vsize = vsize
         self.fieldOfView = fieldOfView
-        (self.halfWidth, self.halfHeight, self.pixelSize) = halfWidthAndhalfHeightAndPixelSize(hsize: hsize,
+        (self.halfWidth, self.halfHeight, self.pixelSize) = halfWidthAndHalfHeightAndPixelSize(hsize: hsize,
                                                                                                vsize: vsize,
                                                                                                fieldOfView: fieldOfView)
     }
@@ -42,12 +42,12 @@ public struct Camera {
     }
 }
 
-fileprivate func halfWidthAndhalfHeightAndPixelSize(hsize: Int, vsize: Int, fieldOfView: Double) -> (Double, Double, Double) {
-    let (halfWidth, halfHeight) = halfWidthAndhalfHeight(hsize: hsize, vsize: vsize, fieldOfView: fieldOfView)
+fileprivate func halfWidthAndHalfHeightAndPixelSize(hsize: Int, vsize: Int, fieldOfView: Double) -> (Double, Double, Double) {
+    let (halfWidth, halfHeight) = halfWidthAndHalfHeight(hsize: hsize, vsize: vsize, fieldOfView: fieldOfView)
     return (halfWidth, halfHeight, 2 * halfWidth / Double(hsize))
 }
 
-fileprivate func halfWidthAndhalfHeight(hsize: Int, vsize: Int, fieldOfView: Double) -> (Double, Double) {
+fileprivate func halfWidthAndHalfHeight(hsize: Int, vsize: Int, fieldOfView: Double) -> (Double, Double) {
     let halfView = tan(fieldOfView / 2)
     let aspect = Double(hsize) / Double(vsize)
     if aspect >= 1 {
