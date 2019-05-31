@@ -1,13 +1,14 @@
 import Foundation
 
-public func lighting(material: Material, light: PointLight, point: Tuple, eyev: Tuple, normalv: Tuple) -> Color {
+public func lighting(material: Material, light: PointLight, point: Tuple, eyev: Tuple, normalv: Tuple, inShadow: Bool = false)
+                -> Color {
     let effectiveColor = material.color * light.intensity
     let lightv = (light.position - point).normalized()
     let ambient = effectiveColor * material.ambient
     let lightDotNormal = lightv.dot(normalv)
     let diffuse: Color
     let specular: Color
-    if lightDotNormal < 0 {
+    if lightDotNormal < 0 || inShadow {
         diffuse = .black
         specular = .black
     } else {
