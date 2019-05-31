@@ -2,7 +2,7 @@ import XCTest
 @testable import RayTracerChallengeModel
 
 class IntersectionsTests: XCTestCase {
-    func testIntersectionsAggrateIntersections() {
+    func testIntersectionsAggregateIntersections() {
         let s = Sphere()
         let i1 = Intersection(1, s)
         let i2 = Intersection(2, s)

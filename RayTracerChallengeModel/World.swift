@@ -21,7 +21,8 @@ public struct World {
                         light: light!,
                         point: comps.point,
                         eyev: comps.eyev,
-                        normalv: comps.normalv)
+                        normalv: comps.normalv,
+                        inShadow: isShadowed(comps.overPoint))
     }
 
     public func colorAt(_ ray: Ray) -> Color {

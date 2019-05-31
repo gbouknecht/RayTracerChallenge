@@ -48,13 +48,25 @@ class WorldTests: XCTestCase {
 
     func testWorldCanShadeAnIntersectionFromTheInside() {
         var w = defaultWorld()
-        w.light = PointLight(point(0, 0.25, 0), Color(1, 1, 1))
+        w.light = PointLight(point(0, 0.25, 0), .white)
         let r = Ray(point(0, 0, 0), vector(0, 0, 1))
         let shape = w.objects[1]
         let i = Intersection(0.5, shape)
         let comps = PreparedComputations(intersection: i, ray: r)
         let c = w.shadeHit(comps)
         XCTAssertEqual(c, Color(0.90498, 0.90498, 0.90498))
+    }
+
+    func testWorldCanShadeAnIntersectionInTheShadow() {
+        let light = PointLight(point(0, 0, -10), .white)
+        let s1 = Sphere()
+        let s2 = Sphere(transform: identity().translated(0, 0, 10))
+        let w = World(light: light, objects: [s1, s2])
+        let r = Ray(point(0, 0, 5), vector(0, 0, 1))
+        let i = Intersection(4, s2)
+        let comps = PreparedComputations(intersection: i, ray: r)
+        let c = w.shadeHit(comps)
+        XCTAssertEqual(c, Color(0.1, 0.1, 0.1))
     }
 
     func testWorldCanDetermineColorWhenRayMisses() {

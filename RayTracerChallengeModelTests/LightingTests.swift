@@ -9,7 +9,7 @@ class LightingTests: XCTestCase {
         let eyev = vector(0, 0, -1)
         let normalv = vector(0, 0, -1)
         let light = PointLight(point(0, 0, -10), .white)
-        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv)
+        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv, inShadow: false)
         XCTAssertEqual(result, Color(1.9, 1.9, 1.9))
     }
     
@@ -17,7 +17,7 @@ class LightingTests: XCTestCase {
         let eyev = vector(0, 2.0.squareRoot() / 2, -2.0.squareRoot() / 2)
         let normalv = vector(0, 0, -1)
         let light = PointLight(point(0, 0, -10), .white)
-        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv)
+        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv, inShadow: false)
         XCTAssertEqual(result, Color(1.0, 1.0, 1.0))
     }
     
@@ -25,7 +25,7 @@ class LightingTests: XCTestCase {
         let eyev = vector(0, 0, -1)
         let normalv = vector(0, 0, -1)
         let light = PointLight(point(0, 10, -10), .white)
-        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv)
+        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv, inShadow: false)
         XCTAssertEqual(result, Color(0.7364, 0.7364, 0.7364))
     }
     
@@ -33,7 +33,7 @@ class LightingTests: XCTestCase {
         let eyev = vector(0, -2.0.squareRoot() / 2, -2.0.squareRoot() / 2)
         let normalv = vector(0, 0, -1)
         let light = PointLight(point(0, 10, -10), .white)
-        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv)
+        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv, inShadow: false)
         XCTAssertEqual(result, Color(1.6364, 1.6364, 1.6364))
     }
     
@@ -41,7 +41,7 @@ class LightingTests: XCTestCase {
         let eyev = vector(0, 0, -1)
         let normalv = vector(0, 0, -1)
         let light = PointLight(point(0, 0, 10), .white)
-        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv)
+        let result = lighting(material: m, light: light, point: position, eyev: eyev, normalv: normalv, inShadow: false)
         XCTAssertEqual(result, Color(0.1, 0.1, 0.1))
     }
 

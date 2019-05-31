@@ -1,7 +1,6 @@
 import Foundation
 
-public func lighting(material: Material, light: PointLight, point: Tuple, eyev: Tuple, normalv: Tuple, inShadow: Bool = false)
-                -> Color {
+public func lighting(material: Material, light: PointLight, point: Tuple, eyev: Tuple, normalv: Tuple, inShadow: Bool) -> Color {
     let effectiveColor = material.color * light.intensity
     let lightv = (light.position - point).normalized()
     let ambient = effectiveColor * material.ambient

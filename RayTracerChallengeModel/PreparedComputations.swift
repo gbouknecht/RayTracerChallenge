@@ -5,6 +5,7 @@ public struct PreparedComputations {
     public let eyev: Tuple
     public let normalv: Tuple
     public let inside: Bool
+    public let overPoint: Tuple
 
     public init(intersection: Intersection, ray: Ray) {
         t = intersection.t
@@ -12,6 +13,7 @@ public struct PreparedComputations {
         point = ray.position(t)
         eyev = -ray.direction
         (normalv, inside) = normalvAndInside(object, point, eyev)
+        overPoint = point + normalv * epsilon
     }
 }
 
