@@ -7,20 +7,24 @@ class WorldTests: XCTestCase {
         XCTAssertNil(w.light)
         XCTAssertEqual(w.objects.count, 0)
     }
-    
+
     func testThereExistsADefaultWorldForTesting() {
         let light = PointLight(point(-10, 10, -10), .white)
         let s1 = Sphere(material: Material(
-            color: Color(0.8, 1.0, 0.6),
-            diffuse: 0.7,
-            specular: 0.2))
+                color: Color(0.8, 1.0, 0.6),
+                diffuse: 0.7,
+                specular: 0.2))
         let s2 = Sphere(transform: identity().scaled(0.5, 0.5, 0.5))
         let w = defaultWorld()
         XCTAssertEqual(w.light!, light)
-        XCTAssertTrue(w.objects.contains { $0 as! Sphere == s1 })
-        XCTAssertTrue(w.objects.contains { $0 as! Sphere == s2 })
+        XCTAssertTrue(w.objects.contains {
+            $0 as! Sphere == s1
+        })
+        XCTAssertTrue(w.objects.contains {
+            $0 as! Sphere == s2
+        })
     }
-    
+
     func testWorldCanIntersectRay() {
         let w = defaultWorld()
         let r = Ray(point(0, 0, -5), vector(0, 0, 1))
@@ -74,5 +78,29 @@ class WorldTests: XCTestCase {
         let r = Ray(point(0, 0, 0.75), vector(0, 0, -1))
         let c = w.colorAt(r)
         XCTAssertEqual(c, w.objects[1].material.color)
+    }
+
+    func testWorldCanDetermineShadowWhenNothingIsCollinearWithPointAndLight() {
+        let w = defaultWorld()
+        let p = point(0, 10, 0)
+        XCTAssertFalse(w.isShadowed(p))
+    }
+
+    func testWorldCanDetermineShadowWhenObjectIsBetweenPointAndLight() {
+        let w = defaultWorld()
+        let p = point(10, -10, 10)
+        XCTAssertTrue(w.isShadowed(p))
+    }
+
+    func testWorldCanDetermineShadowWhenObjectIsBehindLight() {
+        let w = defaultWorld()
+        let p = point(-20, 20, -20)
+        XCTAssertFalse(w.isShadowed(p))
+    }
+
+    func testWorldCanDetermineShadowWhenObjectIsBehindPoint() {
+        let w = defaultWorld()
+        let p = point(-2, 2, -2)
+        XCTAssertFalse(w.isShadowed(p))
     }
 }

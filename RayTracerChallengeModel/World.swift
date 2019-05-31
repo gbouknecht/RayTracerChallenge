@@ -31,4 +31,17 @@ public struct World {
             return .black
         }
     }
+
+    public func isShadowed(_ point: Tuple) -> Bool {
+        assert(light != nil)
+        let v = light!.position - point
+        let distance = v.magnitude
+        let direction = v.normalized()
+        let r = Ray(point, direction)
+        if let hit = intersect(r).hit() {
+            return hit.t < distance
+        } else {
+            return false
+        }
+    }
 }
