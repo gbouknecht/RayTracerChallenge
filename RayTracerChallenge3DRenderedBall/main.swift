@@ -23,7 +23,7 @@ let light = PointLight(point(-10, 10, -10), .white)
             let point = ray.position(hit.t)
             let eye = -ray.direction
             let normal = shape.normalAt(point)
-            let color = lighting(material: shape.material, light: light, point: point, eyev: eye, normalv: normal)
+            let color = lighting(material: shape.material, light: light, point: point, eyev: eye, normalv: normal, inShadow: false)
             canvas[x, y] = color
         }
     }
