@@ -576,20 +576,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Gerrit Bouknecht";
 				TargetAttributes = {
 					DA36603721DF8E1E009CD1F5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					DA58EDCE21D8FD5B0041C10A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					DA58EDF721DCE4740041C10A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					DA5D442121CD6AF000F238F0 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					DA7154FB22A1225E0070BB63 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -597,9 +601,11 @@
 					};
 					DACD705C21CD39CC00B02A85 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					DACD706421CD39CC00B02A85 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -828,7 +834,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallenge3DRenderedBall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -847,7 +853,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallenge3DRenderedBall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -866,7 +872,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -885,7 +891,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -904,7 +910,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeBallShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -923,7 +929,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeBallShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -944,7 +950,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeProjectiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -965,7 +971,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeProjectiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1128,7 +1134,7 @@
 		DACD707421CD39CC00B02A85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1148,7 +1154,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeModel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1157,7 +1163,7 @@
 		DACD707521CD39CC00B02A85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1177,7 +1183,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeModel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1197,7 +1203,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeModelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1215,7 +1221,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.bouknecht.RayTracerChallengeModelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
