@@ -1,6 +1,6 @@
 public struct PreparedComputations {
     public let t: Double
-    public let object: Object
+    public let object: Shape
     public let point: Tuple
     public let eyev: Tuple
     public let normalv: Tuple
@@ -17,7 +17,7 @@ public struct PreparedComputations {
     }
 }
 
-fileprivate func normalvAndInside(_ object: Object, _ point: Tuple, _ eyev: Tuple) -> (Tuple, Bool) {
+fileprivate func normalvAndInside(_ object: Shape, _ point: Tuple, _ eyev: Tuple) -> (Tuple, Bool) {
     let normalv = object.normalAt(point)
     if normalv.dot(eyev) < 0 {
         return (-normalv, true)

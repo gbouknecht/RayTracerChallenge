@@ -1,8 +1,8 @@
 public struct World {
     public var light: PointLight?
-    public var objects: [Object]
+    public var objects: [Shape]
     
-    public init(light: PointLight? = nil, objects: [Object] = [Object]()) {
+    public init(light: PointLight? = nil, objects: [Shape] = [Shape]()) {
         self.light = light
         self.objects = objects
     }

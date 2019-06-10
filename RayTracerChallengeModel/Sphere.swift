@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Sphere: Object, Equatable {
+public struct Sphere: Shape, Equatable {
     public let transform: Matrix
     public var material: Material
 
@@ -9,12 +9,11 @@ public struct Sphere: Object, Equatable {
         self.material = material
     }
     
-    public func intersect(_ ray: Ray) -> Intersections {
-        let transformedRay = ray.transformed(transform.inverted())
-        let sphereToTransformedRay = transformedRay.origin - point(0, 0, 0)    // For now, the sphere is centered at the world origin.
-        let a = transformedRay.direction.dot(transformedRay.direction)
-        let b = 2 * transformedRay.direction.dot(sphereToTransformedRay)
-        let c = sphereToTransformedRay.dot(sphereToTransformedRay) - 1
+    public func localIntersect(_ localRay: Ray) -> Intersections {
+        let sphereToLocalRay = localRay.origin - point(0, 0, 0)    // For now, the sphere is centered at the world origin.
+        let a = localRay.direction.dot(localRay.direction)
+        let b = 2 * localRay.direction.dot(sphereToLocalRay)
+        let c = sphereToLocalRay.dot(sphereToLocalRay) - 1
         let discriminant = pow(b, 2) - 4 * a * c
         if discriminant < 0 {
             return Intersections()
@@ -26,11 +25,7 @@ public struct Sphere: Object, Equatable {
         }
     }
     
-    public func normalAt(_ worldPoint: Tuple) -> Tuple {
-        assert(worldPoint.isPoint())
-        let objectPoint = transform.inverted() * worldPoint
-        let objectNormal = objectPoint - point(0, 0, 0)    // For now, the sphere is centered at the world origin.
-        let worldNormal = transform.inverted().transposed() * objectNormal
-        return vector(worldNormal.x, worldNormal.y, worldNormal.z).normalized()
+    public func localNormalAt(_ localPoint: Tuple) -> Tuple {
+        return localPoint - point(0, 0, 0)    // For now, the sphere is centered at the world origin.
     }
 }
