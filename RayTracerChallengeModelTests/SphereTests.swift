@@ -2,6 +2,29 @@ import XCTest
 @testable import RayTracerChallengeModel
 
 class SphereTests: XCTestCase {
+    func testSphereHasIdentityMatrixAsDefaultTransformation() {
+        let s = Sphere()
+        XCTAssertEqual(s.transform, identity())
+    }
+
+    func testSpheresTransformationCanBeChanged() {
+        let t = identity().translated(2, 3, 4)
+        let s = Sphere(transform: t)
+        XCTAssertEqual(s.transform, t)
+    }
+
+    func testSphereHasDefaultMaterial() {
+        let s = Sphere()
+        let m = s.material
+        XCTAssertEqual(m, Material())
+    }
+
+    func testSphereMaterialCanBeChanged() {
+        let m = Material(ambient: 1)
+        let s = Sphere(material: m)
+        XCTAssertEqual(s.material, m)
+    }
+
     func testRayCanLocalIntersectSphereAtTwoPoints() {
         let r = Ray(point(0, 0, -5), vector(0, 0, 1))
         let s = Sphere()
@@ -53,18 +76,7 @@ class SphereTests: XCTestCase {
         XCTAssertEqual(xs[0].object as! Sphere, s)
         XCTAssertEqual(xs[1].object as! Sphere, s)
     }
-    
-    func testSphereHasIdentityMatrixAsDefaultTransformation() {
-        let s = Sphere()
-        XCTAssertEqual(s.transform, identity())
-    }
-    
-    func testSpheresTransformationCanBeChanged() {
-        let t = identity().translated(2, 3, 4)
-        let s = Sphere(transform: t)
-        XCTAssertEqual(s.transform, t)
-    }
-    
+
     func testScaledSphereCanLocalIntersectRay() {
         let r = Ray(point(0, 0, -2.5), vector(0, 0, 0.5))
         let s = Sphere(transform: identity().scaled(2, 2, 2))
@@ -104,17 +116,5 @@ class SphereTests: XCTestCase {
         let xyz = 3.0.squareRoot() / 3
         let n = s.localNormalAt(point(xyz, xyz, xyz))
         XCTAssertEqual(n, vector(xyz, xyz, xyz))
-    }
-    
-    func testSphereHasDefaultMaterial() {
-        let s = Sphere()
-        let m = s.material
-        XCTAssertEqual(m, Material())
-    }
-    
-    func testSphereMaterialCanBeChanged() {
-        let m = Material(ambient: 1)
-        let s = Sphere(material: m)
-        XCTAssertEqual(s.material, m)
     }
 }
